@@ -1,0 +1,69 @@
+.portadaMax-fondo {
+  background-image: url(../assets/portadaMax.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-portada {
+  width: 400px;
+  margin-top: 60px;
+}
+
+.mucho-mas {
+  font-weight: 600;
+}
+
+.precio-plan-inicio {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.boton-registro-portada {
+  width: 300px;
+  margin: 0px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--color-primario);
+}
+
+.boton-registro-portada:hover {
+  background-color: var(--color-secundario);
+}
+
+.descubre {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.descubre-parrafo {
+  text-align: center;
+  font-size: 25px;
+}
+
+.suscribete-final {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .logo-portada {
+    width: 200px;
+    margin-top: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .boton-registro-portada {
+    width: 200px;
+  }
+}
