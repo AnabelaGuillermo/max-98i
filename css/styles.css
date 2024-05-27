@@ -55,7 +55,7 @@ main {
 }
 
 nav {
-  background-color: black;
+  background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
   position: fixed;
   width: 100%;
   z-index: 1000;
