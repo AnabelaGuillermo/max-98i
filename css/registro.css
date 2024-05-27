@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.text_mute {
+  font-size: 0.75rem;
+}
+
+.text-info {
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.boton-submit {
+  background-color: var(--color-primario);
+  border: none;
+}
+
+.boton-submit:hover {
+  background-color: var(--color-secundario);
+}
