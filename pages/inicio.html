@@ -32,6 +32,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/inicio.css" />
   </head>
   <body>
     <header>
@@ -85,7 +86,437 @@
         </section>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <!-- PORTADA -->
+      <section class="container-fluid seccion-carousel-inicio">
+        <article id="carousel-inicio" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carousel-inicio"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carousel-inicio"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carousel-inicio"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/the-gunman-el-objetivo-1.jpg?resize=1024%2C448&ssl=1"
+                class="d-block w-100"
+                alt="The Gunman"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>The Gunman</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+                <a class="btn link-reproducir" href="#">REPRODUCIR</a>
+                <a class="btn link-ver-mas" href="#">VER MÁS...</a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/terminal-1.jpg?resize=1024%2C448&ssl=1"
+                class="d-block w-100"
+                alt="Terminal"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Terminal</h5>
+                <p>
+                  Some representative placeholder content for the second slide.
+                </p>
+                <a class="btn link-reproducir" href="#">REPRODUCIR</a>
+                <a class="btn link-ver-mas" href="#">VER MÁS...</a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/el-huesped-3.jpg?resize=1024%2C448&ssl=1"
+                class="d-block w-100"
+                alt="El Huésped"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>El Huésped</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+                <a class="btn link-reproducir" href="#">REPRODUCIR</a>
+                <a class="btn link-ver-mas" href="#">VER MÁS...</a>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carousel-inicio"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carousel-inicio"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </article>
+      </section>
+
+      <!-- CATEGORÍAS -->
+      <section class="container categorias-inicio mt-4">
+        <div class="row justify-content-between">
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-comedia" href="./comedia.html"
+              >COMEDIA</a
+            >
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-drama" href="./drama.html">DRAMA</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-terror" href="./terror.html">TERROR</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-accion" href="./accion.html">ACCIÓN</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-crimen" href="./crimen.html">CRIMEN</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-romanticas" href="./romanticas.html"
+              >ROMÁNTICAS</a
+            >
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a
+              class="btn btn-block link-ciencia-ficcion"
+              href="./cienciaFiccion.html"
+              >CIENCIA FICCIÓN</a
+            >
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block ver-todo-inicio" href="./verTodo.html"
+              >VER TODO...</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- PELICULAS RECOMENDADAS -->
+      <section
+        class="container peliculas-recomendadas-inicio d-flex justify-content-center"
+      >
+        <h2 class="mt-5">PELÍCULAS RECOMENDADAS</h2>
+      </section>
+      <section
+        id="carouselEjemploInicio"
+        class="carousel slide container mt-3"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="cards-wrapper">
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/age-of-ice-2-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Age of Ice"
+                />
+                <div class="card-title-overlay">
+                  <h5>Age of Ice</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/anna_1-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Anna"
+                />
+                <div class="card-title-overlay">
+                  <h5>Anna</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/armour-of-god-2.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Armour of God"
+                />
+                <div class="card-title-overlay">
+                  <h5>Armour of God</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/el-huesped-2.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="El Huésped"
+                />
+                <div class="card-title-overlay">
+                  <h5>El Huésped</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/league-of-gods_1-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="League of Gods"
+                />
+                <div class="card-title-overlay">
+                  <h5>League of Gods</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/mas-alla-del-horizonte-2-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Más Allá del Horizonte"
+                />
+                <div class="card-title-overlay">
+                  <h5>Más Allá del Horizonte</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselEjemploInicio"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Antes</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselEjemploInicio"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Después</span>
+        </a>
+      </section>
+
+      <!-- SERIES MÁS VISTAS -->
+      <section
+        class="container series-vistas-inicio d-flex justify-content-center"
+      >
+        <h2 class="mt-5">SERIES MÁS VISTAS</h2>
+      </section>
+      <section
+        id="carouselEjemploInicio"
+        class="carousel slide container mt-3"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="cards-wrapper">
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/age-of-ice-2-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Age of Ice"
+                />
+                <div class="card-title-overlay">
+                  <h5>Age of Ice</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/anna_1-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Anna"
+                />
+                <div class="card-title-overlay">
+                  <h5>Anna</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/armour-of-god-2.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Armour of God"
+                />
+                <div class="card-title-overlay">
+                  <h5>Armour of God</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/el-huesped-2.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="El Huésped"
+                />
+                <div class="card-title-overlay">
+                  <h5>El Huésped</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/league-of-gods_1-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="League of Gods"
+                />
+                <div class="card-title-overlay">
+                  <h5>League of Gods</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/mas-alla-del-horizonte-2-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Más Allá del Horizonte"
+                />
+                <div class="card-title-overlay">
+                  <h5>Más Allá del Horizonte</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselEjemploInicio"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Antes</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselEjemploInicio"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Después</span>
+        </a>
+      </section>
+
+      <!-- TENDENCIAS -->
+      <section
+        class="container peliculas-recomendadas-inicio d-flex justify-content-center"
+      >
+        <h2 class="mt-5">TENDENCIAS</h2>
+      </section>
+      <section
+        id="carouselEjemploInicio"
+        class="carousel slide container mt-3"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="cards-wrapper">
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/age-of-ice-2-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Age of Ice"
+                />
+                <div class="card-title-overlay">
+                  <h5>Age of Ice</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/anna_1-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Anna"
+                />
+                <div class="card-title-overlay">
+                  <h5>Anna</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/armour-of-god-2.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Armour of God"
+                />
+                <div class="card-title-overlay">
+                  <h5>Armour of God</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/el-huesped-2.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="El Huésped"
+                />
+                <div class="card-title-overlay">
+                  <h5>El Huésped</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/league-of-gods_1-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="League of Gods"
+                />
+                <div class="card-title-overlay">
+                  <h5>League of Gods</h5>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/mas-alla-del-horizonte-2-1.jpg?resize=1047%2C1536&ssl=1"
+                  class="card-img-top"
+                  alt="Más Allá del Horizonte"
+                />
+                <div class="card-title-overlay">
+                  <h5>Más Allá del Horizonte</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselEjemploInicio"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Antes</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselEjemploInicio"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Después</span>
+        </a>
+      </section>
+
+      <!-- BOTONES -->
+      <section class="container d-flex justify-content-center mt-5">
+        <a class="btn ver-todo-series" href="#">VER TODO EN SERIES</a>
+        <a class="btn ver-todo-peliculas" href="#">VER TODO EN PELÍCULAS</a>
+      </section>
+    </main>
     <footer>
       <section class="container footer-max">
         <hr />
