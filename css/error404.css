@@ -1,0 +1,41 @@
+.error-404 {
+    background: url('https://store-images.s-microsoft.com/image/apps.13744.14281583492175081.275a9578-a2da-469f-bb9a-e0b521ab611f.30a82ba3-9540-42a1-a499-63f9225fab46?mode=scale&q=90&h=1080&w=1920') no-repeat center center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px #6a029a;
+    font-size: 15rem; /* Cambiado para que sea más grande */
+    position: relative;
+    transition: text-shadow 0.1s ease-in-out;
+    background-size: contain;
+    background-position: center;
+  }
+  
+  main .display-1 {
+    font-size: 12rem; /* Cambiado para que sea más grande */
+    font-weight: 870;
+  }
+  
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 60px; 
+  }
+  
+  main .lead {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  main .btn {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+  }
+  
