@@ -1,0 +1,166 @@
+/* Estilos personalizados para el formulario */
+
+.boton-custom {
+  background-color: #007bff; /* Azul */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.boton-custom:hover {
+  background-color: #0056b3; /* Azul oscuro */
+}
+
+#form-peliculas-series {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+  }
+  
+  /* Estilos para el menú desplegable */
+
+/* Estilos personalizados solo para el formulario de categorías */
+.label-categorias {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.categorias-select:focus + .label-categorias,
+.categorias-select:not(:placeholder-shown) + .label-categorias {
+  top: -15px;
+  font-size: 18px;
+  color: var(--color-primario);
+}
+
+
+.label-floating select:focus + label,
+.label-floating select:not(:placeholder-shown) + label {
+    margin-bottom: 15px;
+    top: -15px;
+    left: 0;
+    font-size: 18px;
+    color: var(--color-primario);
+}
+
+/* Estilos para las opciones del menú desplegable */
+.categorias-select option {
+  color: black; /* Color del texto de las opciones */
+  background-color: white; /* Color de fondo de las opciones */
+}
+  
+  .label-floating {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .label-floating input,
+  .label-floating textarea,
+  .label-floating select {
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 2px solid var(--color-primario);
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .label-floating input:focus,
+  .label-floating textarea:focus,
+  .label-floating select:focus {
+    outline: none;
+    border-bottom-color: var(--color-secundario);
+    background-color: #A9A9A9;
+    color: #888;
+  }
+  
+  .label-floating label {
+    color: #888;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .label-floating input:focus + label,
+  .label-floating input:not(:placeholder-shown) + label,
+  .label-floating textarea:focus + label,
+  .label-floating textarea:not(:placeholder-shown) + label,
+  .label-floating select:focus + label,
+  .label-floating select:not(:placeholder-shown) + label {
+    margin-bottom: 15px;
+    top: -15px;
+    left: 0;
+    font-size: 18px;
+    color: var(--color-primario);
+  }
+  
+  .label-floating input:required:invalid + label,
+  .label-floating textarea:required:invalid + label,
+  .label-floating select:required:invalid + label {
+    color: #f44336;
+  }
+  
+  
+  /* Contenedor de los botones */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Botón primario (Guardar) */
+  .btn-primary {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--color-primario);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-secundario);
+  }
+  
+  /* Botón secundario (Cancelar) */
+  .btn-secondary {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: grey;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .btn-secondary:hover {
+    background-color: darkgrey;
+  }
+  
+  #button-cancelar {
+    display: none;
+  }
