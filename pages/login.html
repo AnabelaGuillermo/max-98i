@@ -32,6 +32,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/login.css">
   </head>
   <body>
     <header>
@@ -61,7 +62,105 @@
         </section>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section class="container login-section">
+        <h1>COMENCEMOS!</h1>
+        <span class="d-block text-center mt-3"
+          >Ingresa la dirección de correo electrónico y la contraseña
+        </span>
+        <span class="d-block text-center mb-3"
+          >de tu cuenta de Max o de HBO Max.</span
+        >
+        <article class="row justify-content-center">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electronico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <div id="emailHelp" class="form-text text-white">
+                  Nunca compartiremos su correo electrónico con nadie más.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  maxlength="15"
+                  minlength="5"
+                  required
+                />
+                <small id="password-mute" class="form-text text-white">
+                  Tener al menos 10 caracteres con no más de 4 caracteres
+                  repetidos seguidos.
+                </small>
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="checkCambios"
+                />
+                <label class="form-check-label" for="checkCambios"
+                  >Recordar mi usuario y contraseña</label
+                >
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary boton-submit">
+                  Enviar
+                </button>
+              </div>
+            </form>
+            <!-- ====== -->
+            <div class="my-3 d-grid">
+              <a
+                href="#"
+                class="text-primary my-3 boton-modal text-center"
+                data-bs-toggle="modal"
+              >
+                ¿Has olvidado la contraseña?
+              </a>
+            </div>
+            <!-- ==== cuentas de Google y Facebook === -->
+            <div class="mb-3">
+              <div class="d-grid gap-2">
+                <button
+                  class="btn rounded-pill botonLogin boton-facebook loginResponsive d-inline-block"
+                  type="button"
+                >
+                  <i class="fab fa-facebook text-primary"></i> Iniciar sesión
+                  con mi cuenta de Facebook
+                </button>
+                <button
+                  class="btn rounded-pill botonLogin boton-google loginResponsive d-inline-block"
+                  type="button"
+                >
+                  <i class="fab fa-google text-danger"></i> Iniciar sesión con
+                  mi cuenta de Google
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- === IMAGEN LOGIN === -->
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 d-flex mx-auto justify-content-center align-items-center"
+          >
+            <img
+              src="../assets/img-login.jpeg"
+              alt="logo de max"
+              class="img-fluid imagen-login h-100"
+            />
+          </div>
+        </article>
+      </section>
+    </main>
     <footer>
       <section class="container footer-max">
         <hr />
