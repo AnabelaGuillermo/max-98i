@@ -1,5 +1,3 @@
-import { Pelicula } from './peliculas.js';
-import { Serie } from './serie.js';
 import { obtenerPeliculasDeLS, guardarPeliculasEnLS } from './utils.js';
 
 export function agregarPelicula(pelicula) {
