@@ -2,7 +2,7 @@ import { obtenerUsuarioDeLs } from "../utils.js";
 import { Usuario } from "./Usuario.js";
 
 export const agregarUsuario = (nombre, apellido, email, contraseña) => {
-    // Crear instancia de usuario
+    //Crear instancia de usuario
     const usuario = new Usuario(nombre, apellido, email, contraseña);
 
     // Obtener lista de usuarios del almacenamiento local
