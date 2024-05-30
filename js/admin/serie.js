@@ -1,5 +1,5 @@
 export class Serie {
-    constructor(titulo, tipo, categoria, caratura, portada, trailer, video, descripcion, publicada ) {
+    constructor(titulo, tipo, categoria, caratula, portada, trailer, video, descripcion, publicada ) {
       this.codigo = window.self.crypto.randomUUID();
       this.titulo = titulo;
       this.tipo = tipo;
