@@ -22,3 +22,7 @@ export function obtenerSeriesDeLS() {
 export function guardarSeriesEnLS(series) {
     localStorage.setItem('series', JSON.stringify(series));
 }
+
+export const obtenerUsuarioDeLs =()=>{
+    return JSON.parse(localStorage.getItem('usuarios')) || [];
+}
