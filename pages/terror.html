@@ -32,40 +32,65 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/resultadosCategorias.css" />
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
-            <section class="container-fluid">
-              <a class="navbar-brand" href="./inicio.html">
-                <img src="../assets/Max_logo.svg.png" class="max-logo" alt="Max-logo">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+      <nav class="navbar navbar-expand-lg">
+        <section class="container-fluid">
+          <a class="navbar-brand" href="./inicio.html">
+            <img
+              src="../assets/Max_logo.svg.png"
+              class="max-logo"
+              alt="Max-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <section class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./inicio.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./series.html">Series</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./peliculas.html">Películas</a>
+              </li>
+            </ul>
+            <form class="d-flex search-form">
+              <input
+                class="form-control me-2 input-boton"
+                type="search"
+                placeholder="Buscar..."
+                aria-label="Search"
+              />
+              <button class="btn boton-search" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
               </button>
-              <section class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="./inicio.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./series.html">Series</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./peliculas.html">Películas</a>
-                  </li>
-                </ul>
-                <form class="d-flex search-form">
-                  <input class="form-control me-2 input-boton" type="search" placeholder="Buscar..." aria-label="Search">
-                  <button class="btn boton-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-                <a class="nav-link miperfil-max" href="./adminPelisSeries.html">Mi perfil</a>
-              </section>
-            </section>
-          </nav>
-          
+            </form>
+            <a class="nav-link miperfil-max" href="./adminPelisSeries.html"
+              >Mi perfil</a
+            >
+          </section>
+        </section>
+      </nav>
     </header>
-    <main></main>
+    <main>
+      <section class="container resultados-categorias-section">
+        <article class="row" id="resultados-categorias-terror"></article>
+      </section>
+    </main>
     <footer>
       <section class="container footer-max">
         <hr />
@@ -114,5 +139,7 @@
         </a>
       </section>
     </footer>
+    <script src="../js/utils.js" type="module"></script>
+    <script src="../js/terror.js" type="module"></script>
   </body>
 </html>
