@@ -54,7 +54,7 @@
                   así puedas registrarte en nuestra plataforma.
                 </p>
                 <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary boton-cards">Ver más</a>
+                  <a href="../pages/error404.html" class="btn btn-primary boton-cards">Ver más</a>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
                   error.
                 </p>
                 <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary boton-cards">Ver más</a>
+                  <a href="../pages/error404.html" class="btn btn-primary boton-cards">Ver más</a>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@
                   tu cuenta de proveedor de Internet, telefonía móvil o TV.
                 </p>
                 <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary boton-cards">Ver más</a>
+                  <a href="../pages/error404.html" class="btn btn-primary boton-cards">Ver más</a>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
                   proveedores.
                 </p>
                 <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary boton-cards">Ver más</a>
+                  <a href="../pages/error404.html" class="btn btn-primary boton-cards">Ver más</a>
                 </div>
               </div>
             </div>
@@ -120,27 +120,28 @@
       <small class="d-block text-center mb-3 text_mute">* indica un campo obligatorio</small>
       <article class="row justify-content-center">
         <div class="col-sm-12 col-md-12 col-lg-6">
-          <form>
+          <form id="form-contacto">
             <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre *</label>
-              <input type="text" class="form-control" id="nombre" minlength="3" maxlength="20" required />
+              <label for="input-nombre" class="form-label">Nombre *</label>
+              <input type="text" class="form-control" id="input-nombre" minlength="3" maxlength="20" required />
+              <div class="invalid-feedback">Ingrese un nombre válido.</div>
             </div>
             <div class="mb-3">
-              <label for="apellido" class="form-label">Apellido *</label>
-              <input type="text" class="form-control" id="apellido" minlength="3" maxlength="20" required />
+              <label for="input-apellido" class="form-label">Apellido *</label>
+              <input type="text" class="form-control" id="input-apellido" minlength="3" maxlength="20" required />
+              <div class="invalid-feedback">Ingrese un apellido válido.</div>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Correo electronico *</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required />
+              <label for="input-email" class="form-label">Correo electronico *</label>
+              <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" required />
+              <div class="invalid-feedback">Ingrese un correo electronico válido.</div>
             </div>
             <div class="row">
               <div class="form-group col">
-                <textarea class="form-control mt-3 shadow-lg" rows="5" placeholder="Comentario..."
-                  maxlength="200"></textarea>
+                <textarea class="form-control mt-3 shadow-lg" rows="5" placeholder="Comentario..." maxlength="200"
+                  id="input-notas"></textarea>
               </div>
             </div>
-
-
             <div class="text-info text-white">
               Deja tu comentario y un administrador de la cuenta de MAX se pondrá en contacto contigo para solucionar
               cualquier problema específico sobre tu cuenta.
@@ -187,6 +188,9 @@
       </a>
     </section>
   </footer>
+  <script type="module" src="../js/contacto/contacto.js"></script>
+  <script type="module" src="../js/validators.js"></script>
+  <script type="module" src="../js/utils.js"></script>
 </body>
 
 </html>
