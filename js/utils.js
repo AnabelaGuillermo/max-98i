@@ -26,3 +26,7 @@ export function guardarSeriesEnLS(series) {
 export const obtenerUsuarioDeLs =()=>{
     return JSON.parse(localStorage.getItem('usuarios')) || [];
 }
+
+export const obtenerComentarioDeLs =()=>{
+    return JSON.parse(localStorage.getItem('comentarios')) || [];
+}
