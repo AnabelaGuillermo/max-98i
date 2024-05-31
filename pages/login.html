@@ -1,213 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Max - Login</title>
     <meta name="author" content="Grupo 5" />
     <meta name="description" content="Max Login desarrollado por Grupo 5" />
-    <meta
-      name="keywords"
-      content="Max, login, rolling, RollingCode, proyecto grupal, grupo 5"
-    />
-    <link
-      rel="shortcut icon"
-      href="../assets/favicon-max.png"
-      type="image/png"
-    />
-    <script
-      src="https://kit.fontawesome.com/b33de609e9.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <meta name="keywords" content="Max, login, rolling, RollingCode, proyecto grupal, grupo 5" />
+    <link rel="shortcut icon" href="../assets/favicon-max.png" type="image/png" />
+    <script src="https://kit.fontawesome.com/b33de609e9.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/login.css">
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <nav class="navbar">
-        <section class="container-fluid">
-          <article class="seccion-izquierda-nav">
-            <a href="../index.html">
-              <img
-                class="max-logo"
-                src="../assets/Max_logo.svg.png"
-                alt="Max-logo"
-              />
-            </a>
-          </article>
-          <article class="seccion-derecha-nav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link ingresa" href="#">INGRESÁ</a>
-                <a
-                  class="btn boton-registro d-inline-block"
-                  href="./registro.html"
-                  >SUSCRÍBETE AHORA</a
-                >
-              </li>
-            </ul>
-          </article>
-        </section>
-      </nav>
+        <nav class="navbar">
+            <section class="container-fluid">
+                <article class="seccion-izquierda-nav">
+                    <a href="../index.html">
+                        <img class="max-logo" src="../assets/Max_logo.svg.png" alt="Max-logo" />
+                    </a>
+                </article>
+                <article class="seccion-derecha-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link ingresa" href="#">INGRESÁ</a>
+                            <a class="btn boton-registro d-inline-block" href="./registro.html">SUSCRÍBETE AHORA</a>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </nav>
     </header>
     <main>
-      <section class="container login-section">
-        <h1>COMENCEMOS!</h1>
-        <span class="d-block text-center mt-3"
-          >Ingresa la dirección de correo electrónico y la contraseña
-        </span>
-        <span class="d-block text-center mb-3"
-          >de tu cuenta de Max o de HBO Max.</span
-        >
-        <article class="row justify-content-center">
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <form>
-              <div class="mb-3">
-                <label for="email" class="form-label">Correo electronico</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  required
-                />
-                <div id="emailHelp" class="form-text text-white">
-                  Nunca compartiremos su correo electrónico con nadie más.
+        <section class="container login-section">
+            <h1>COMENCEMOS!</h1>
+            <span class="d-block text-center mt-3">Ingresa la dirección de correo electrónico y la contraseña</span>
+            <span class="d-block text-center mb-3">de tu cuenta de Max o de HBO Max.</span>
+            <article class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <form id="form-login">
+                        <div class="mb-3">
+                            <label for="input-usuario" class="form-label">Correo electronico</label>
+                            <input type="email" class="form-control" id="input-usuario" aria-describedby="emailHelp" required />
+                            <div id="emailHelp" class="form-text text-white">Nunca compartiremos su correo electrónico con nadie más.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-contraseña" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="input-contraseña" maxlength="15" minlength="4" required />
+                            <small id="password-mute" class="form-text text-white">Tener al menos 10 caracteres con no más de 4 caracteres repetidos seguidos.</small>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="checkCambios" />
+                            <label class="form-check-label" for="checkCambios">Recordar mi usuario y contraseña</label>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary boton-submit">Enviar</button>
+                        </div>
+                        <div id="alert-login" class="alert alert-danger d-none mt-3" role="alert">
+                            Credenciales incorrectas, intente nuevamente.
+                        </div>
+                    </form>
+                    <!-- ====== -->
+                    <div class="my-3 d-grid">
+                        <a href="#" class="text-primary my-3 boton-modal text-center" data-bs-toggle="modal">¿Has olvidado la contraseña?</a>
+                    </div>
+                    <!-- ==== cuentas de Google y Facebook === -->
+                    <div class="mb-3">
+                        <div class="d-grid gap-2">
+                            <button class="btn rounded-pill botonLogin boton-facebook loginResponsive d-inline-block" type="button">
+                                <i class="fab fa-facebook text-primary"></i> Iniciar sesión con mi cuenta de Facebook
+                            </button>
+                            <button class="btn rounded-pill botonLogin boton-google loginResponsive d-inline-block" type="button">
+                                <i class="fab fa-google text-danger"></i> Iniciar sesión con mi cuenta de Google
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  maxlength="15"
-                  minlength="5"
-                  required
-                />
-                <small id="password-mute" class="form-text text-white">
-                  Tener al menos 10 caracteres con no más de 4 caracteres
-                  repetidos seguidos.
-                </small>
-              </div>
-              <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="checkCambios"
-                />
-                <label class="form-check-label" for="checkCambios"
-                  >Recordar mi usuario y contraseña</label
-                >
-              </div>
-              <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary boton-submit">
-                  Enviar
-                </button>
-              </div>
-            </form>
-            <!-- ====== -->
-            <div class="my-3 d-grid">
-              <a
-                href="#"
-                class="text-primary my-3 boton-modal text-center"
-                data-bs-toggle="modal"
-              >
-                ¿Has olvidado la contraseña?
-              </a>
-            </div>
-            <!-- ==== cuentas de Google y Facebook === -->
-            <div class="mb-3">
-              <div class="d-grid gap-2">
-                <button
-                  class="btn rounded-pill botonLogin boton-facebook loginResponsive d-inline-block"
-                  type="button"
-                >
-                  <i class="fab fa-facebook text-primary"></i> Iniciar sesión
-                  con mi cuenta de Facebook
-                </button>
-                <button
-                  class="btn rounded-pill botonLogin boton-google loginResponsive d-inline-block"
-                  type="button"
-                >
-                  <i class="fab fa-google text-danger"></i> Iniciar sesión con
-                  mi cuenta de Google
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- === IMAGEN LOGIN === -->
-          <div
-            class="col-sm-12 col-md-12 col-lg-6 d-flex mx-auto justify-content-center align-items-center"
-          >
-            <img
-              src="../assets/img-login.jpeg"
-              alt="logo de max"
-              class="img-fluid imagen-login h-100"
-            />
-          </div>
-        </article>
-      </section>
+                <!-- === IMAGEN LOGIN === -->
+                <div class="col-sm-12 col-md-12 col-lg-6 d-flex mx-auto justify-content-center align-items-center">
+                    <img src="../assets/img-login.jpeg" alt="logo de max" class="img-fluid imagen-login h-100" />
+                </div>
+            </article>
+        </section>
     </main>
     <footer>
-      <section class="container footer-max">
-        <hr />
-        <article class="mt-1">
-          <a class="a-privacidad" href="./politica.html"
-            >Política de Privacidad</a
-          >
-          <a class="a-uso" href="./terminos.html">Términos de Uso</a>
-          <a class="a-acercade" href="./acercaDe.html">Acerca De</a>
-          <a class="a-contacto" href="./contacto.html">Contacto</a>
-        </article>
-        <article class="mt-1 copy-max">
-          <p class="mt-3">
-            &copy; 2024 WarnerMedia Direct Latin America, LLC. Todos los
-            derechos reservados. Max se usa bajo licencia.
-          </p>
-        </article>
-      </section>
-      <section class="container-fluid redes-max mt-1">
-        <a href="https://www.facebook.com/">
-          <img
-            class="a-facebook"
-            src="../assets/social_iconfacebook.png"
-            alt="Facebook-Max"
-          />
-        </a>
-        <a href="https://www.instagram.com/">
-          <img
-            class="a-instagram"
-            src="../assets/social_iconinstagram.png"
-            alt="Instagram-Max"
-          />
-        </a>
-        <a href="https://www.youtube.com/">
-          <img
-            class="a-youtube"
-            src="../assets/social_iconyoutube.png"
-            alt="YouTube-Max"
-          />
-        </a>
-        <a href="https://www.x.com/">
-          <img class="a-x" src="../assets/x.png" alt="X-Max" />
-        </a>
-        <a href="https://www.tiktok.com/">
-          <img class="a-tiktok" src="../assets/tik_tok.png" alt="TikTok-Max" />
-        </a>
-      </section>
+        <section class="container footer-max">
+            <hr />
+            <article class="mt-1">
+                <a class="a-privacidad" href="./politica.html">Política de Privacidad</a>
+                <a class="a-uso" href="./terminos.html">Términos de Uso</a>
+                <a class="a-acercade" href="./acercaDe.html">Acerca De</a>
+                <a class="a-contacto" href="./contacto.html">Contacto</a>
+            </article>
+            <article class="mt-1 copy-max">
+                <p class="mt-3">
+                    &copy; 2024 WarnerMedia Direct Latin America, LLC. Todos los derechos reservados. Max se usa bajo licencia.
+                </p>
+            </article>
+        </section>
+        <section class="container-fluid redes-max mt-1">
+            <a href="https://www.facebook.com/">
+                <img class="a-facebook" src="../assets/social_iconfacebook.png" alt="Facebook-Max" />
+            </a>
+            <a href="https://www.instagram.com/">
+                <img class="a-instagram" src="../assets/social_iconinstagram.png" alt="Instagram-Max" />
+            </a>
+            <a href="https://www.youtube.com/">
+                <img class="a-youtube" src="../assets/social_iconyoutube.png" alt="YouTube-Max" />
+            </a>
+            <a href="https://www.x.com/">
+                <img class="a-x" src="../assets/x.png" alt="X-Max" />
+            </a>
+            <a href="https://www.tiktok.com/">
+                <img class="a-tiktok" src="../assets/tik_tok.png" alt="TikTok-Max" />
+            </a>
+        </section>
     </footer>
-  </body>
+    <script type="module" src="../js/login/login.js"></script>
+</body>
 </html>

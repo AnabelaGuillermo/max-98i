@@ -5,7 +5,7 @@ export const validateName = (name) => {
     }
 
     const trimmedValue = name.trim();
-    if (trimmedValue.length < 3 || trimmedValue.length > 25) {
+    if (trimmedValue.length < 3 || trimmedValue.length > 100) {
         return false;
     }
 
@@ -26,3 +26,20 @@ export const validateUrl = (url) => {
     const regex = /^\b(?:https?|ftp):\/\/[-A-Za-z0-9+&@#\/%?=~_|!:,.;]+[-A-Za-z0-9+&@#\/%=~_|]$/;
     return regex.test(trimmedValue);
 };
+export function validateEmail(email) {
+    if (typeof email !== 'string' || email.trim() === '') {
+      return false;
+    }
+  
+    const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    return regexEmail.test(email.trim());
+}
+  
+export function validatePassword(password) {
+    if (typeof password !== 'string' || password.trim() === '') {
+      return false;
+    }
+  
+    const regexPassword = /^.{5,15}$/;
+    return regexPassword.test(password.trim());
+}
