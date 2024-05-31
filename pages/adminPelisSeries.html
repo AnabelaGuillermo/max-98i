@@ -61,9 +61,17 @@
                 <a class="nav-link" href="./peliculas.html">Películas</a>
               </li>
             </ul>
-            <form class="d-flex search-form">
-              <input class="form-control me-2 input-boton" type="search" placeholder="Buscar..." aria-label="Search">
-              <button class="btn boton-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <form class="d-flex search-form" id="searchForm">
+              <input
+                class="form-control me-2 input-boton"
+                type="search"
+                placeholder="Buscar..."
+                aria-label="Search"
+                id="searchInput"
+              />
+              <button class="btn boton-search" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
             </form>
             <a class="nav-link miperfil-max" href="./adminPelisSeries.html">Mi perfil</a>
           </section>
@@ -211,5 +219,6 @@
     <script type="module" src="../js/categorias.js"></script>
     <script type="module" src="../js/validators.js"></script>
     <script type="module" src="../js/admin/abm.js"></script>
+    <script type="module" src="../js/busqueda.js"></script>
   </body>
 </html>
