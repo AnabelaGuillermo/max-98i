@@ -21,14 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
         $inputEmail.value.trim() === usuarioPorDefecto.email &&
         $inputContraseña.value.trim() === usuarioPorDefecto.contraseña
       ) {
-        console.log('Credenciales correctas');
-        localStorage.setItem('loggedIn', 'true');
-        window.location.replace('/pages/inicio.html');
+        Swal.fire({
+          title: 'Inicio de sesión correcto',
+          text: 'Redirigiendo...',
+          icon: 'success',
+          customClass: {
+            popup: 'swal-popup-success',
+            title: 'swal-title-success',
+            content: 'swal-text-success',
+            icon: 'swal-icon-success'
+          },
+          timer: 2000,
+          showConfirmButton: false
+        }).then(() => {
+          localStorage.setItem('loggedIn', 'true');
+          window.location.replace('/pages/inicio.html');
+        });
       } else {
-        console.log('Credenciales incorrectas');
-        $alertCredenciales.classList.remove('d-none');
+        Swal.fire({
+          title: 'Credenciales incorrectas',
+          text: 'Por favor, intente de nuevo.',
+          icon: 'error',
+          customClass: {
+            popup: 'swal-popup-error',
+            title: 'swal-title-error',
+            content: 'swal-text-error',
+            icon: 'swal-icon-error'
+          },
+          timer: 2000,
+          showConfirmButton: false
+        });
       }
-      
-    
   });
 });

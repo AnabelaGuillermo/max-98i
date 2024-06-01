@@ -40,6 +40,6 @@ export function validatePassword(password) {
       return false;
     }
   
-    const regexPassword = /^.{5,15}$/;
+    const regexPassword = /^.{3,15}$/;
     return regexPassword.test(password.trim());
 }
