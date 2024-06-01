@@ -32,6 +32,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/peliculasnav.css">
+    <link rel="stylesheet" href="../css/resultadosCategorias.css">
   </head>
   <body>
     <header>
@@ -65,7 +67,22 @@
       </nav>
       
     </header>
-    <main></main>
+    <main>
+
+      <select id="filtro-categoria" class="form-select mb-3 container">
+        <option value="todos">Todos</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Drama">Drama</option>
+        <option value="Terror">Terror</option>
+        <option value="Accion">Acción</option>
+        <option value="Crimen">Crimen</option>
+        <option value="Romanticas">Románticas</option>
+        <option value="CienciaFiccion">Ciencia Ficción</option>
+    </select>
+      <section class="container resultados-peliculas-section mt-5">
+        <article class="row" id="resultados-peliculas"></article>
+    </section>
+    </main>
     <footer>
         <section class="container footer-max">
           <hr />
@@ -114,6 +131,8 @@
           </a>
         </section>
       </footer>
+      <script type="module" src="../js/utils.js"></script>
+      <script type="module" src="../js/peliculasnav.js"></script>
     </body>
   </html>
   
