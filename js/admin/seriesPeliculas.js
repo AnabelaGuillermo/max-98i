@@ -1,4 +1,4 @@
-import { obtenerPeliculasDeLS, guardarPeliculasEnLS, obtenerCategoriasDeLS } from '../utils.js';
+import { obtenerPeliculasDeLS, guardarPeliculasEnLS, obtenerCategoriasDeLS, guardarSeriesEnLS } from '../utils.js';
 import { validateName, validateUrl } from '../validators.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>
-                    <input type="checkbox" id="destacar-checkbox-${index}" class="destacar-checkbox" style="display: none;">
-                    <label for="destacar-checkbox-${index}" class="check">★</label>
+                    <button class="btn btn-warning destacar-btn" style="color: ${pelicula.destacado ? 'gold' : 'grey'};"><i class="fas fa-star"></i></button>
                 </td>
                 <td>${index + 1}</td>
                 <td><img src="${pelicula.caratula}" alt="Carátula" width="50"></td>
@@ -35,42 +34,44 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="btn btn-danger eliminar-btn"><i class="fa-solid fa-trash"></i></button>
                 </td>
             `;
-            
+    
             if (!pelicula.categoria) {
-                // Llenar dinámicamente el menú desplegable de categorías solo si la película no tiene una categoría definida
                 const selectCategoria = row.querySelector(`#categoria-${index}`);
                 const categorias = obtenerCategoriasDeLS();
                 categorias.forEach((categoria) => {
                     const option = document.createElement('option');
-                    option.value = categoria; // Suponiendo que el nombre de la categoría es suficiente para identificarla
+                    option.value = categoria;
                     option.textContent = categoria;
                     selectCategoria.appendChild(option);
                 });
-            
-                // Remover la opción predeterminada "Categorías"
+    
                 const defaultOption = selectCategoria.querySelector('option[value=""]');
                 if (defaultOption) {
                     defaultOption.remove();
                 }
             }
-
+    
             tbody.appendChild(row);
-
-            // Evento de clic para la estrella (checkbox)
-            const checkbox = row.querySelector('.destacar-checkbox');
-            const label = row.querySelector('.check');
-            label.addEventListener('click', () => {
-                console.log('Clic en la estrella');
-                checkbox.checked = !checkbox.checked; // Cambia el estado del checkbox al hacer clic en la estrella
-                // Disparar manualmente el evento change para que otros scripts lo capturen si es necesario
-                const event = new Event('change', { bubbles: true });
-                checkbox.dispatchEvent(event);
+    
+            const destacarBtn = row.querySelector('.destacar-btn');
+            destacarBtn.addEventListener('click', () => {
+                pelicula.destacado = !pelicula.destacado;
+                destacarBtn.style.color = pelicula.destacado ? 'gold' : 'grey';
+                guardarPeliculasEnLS(peliculas);
+                const alertText = pelicula.destacado ? 'Pelicula destacada.' : 'Pelicula quitada de destacadas.';
+                Swal.fire({
+                    title: '¡Listo!',
+                    text: alertText,
+                    icon: 'success',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
             });
-
+    
             row.querySelector('.editar-btn').addEventListener('click', () => {
                 editarPeliculaConfirmada(index);
             });
-
+    
             row.querySelector('.eliminar-btn').addEventListener('click', () => {
                 eliminarPeliculaConfirmada(index);
             });
@@ -79,10 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function editarPeliculaConfirmada(index) {
         const pelicula = peliculas[index];
-
-        // Ocultar el botón de cancelar al inicio
         document.getElementById('button-cancelar').style.display = 'none';
-
         Swal.fire({
             title: '¿Seguro que quieres editar esta película?',
             showConfirmButton: true,
@@ -91,10 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cancelButtonText: 'No, cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Mostrar el botón de cancelar si se confirma la edición
                 document.getElementById('button-cancelar').style.display = 'block';
-
-                // Lógica para editar la película
                 document.getElementById('titulo').value = pelicula.titulo;
                 document.querySelector(`input[name="tipo"][value="${pelicula.tipo}"]`).checked = true;
                 document.getElementById('categoria').value = pelicula.categoria;
@@ -212,7 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarPeliculas();
         e.target.reset();
 
-        // Mostrar alerta de éxito
         Swal.fire({
             title: 'Guardado',
             text: 'La película se ha guardado correctamente',
@@ -227,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         delete document.getElementById('form-peliculas-series').dataset.index;
     });
 
-    // Llenar las categorías en el formulario de agregar/editar película
     const categorias = obtenerCategoriasDeLS();
     const selectCategoriaFormulario = document.getElementById('categoria');
     categorias.forEach((categoria) => {

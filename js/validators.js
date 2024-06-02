@@ -1,11 +1,13 @@
-// validators.js
+// combinedValidators.js
+
+// Funciones de validación generales
 export const validateName = (name) => {
   if (!name || typeof name !== "string" || name.trim().length === 0) {
     return false;
   }
 
   const trimmedValue = name.trim();
-  if (trimmedValue.length < 3 || trimmedValue.length > 25) {
+  if (trimmedValue.length < 3 || trimmedValue.length > 100) { // Usamos el rango mayor (3-100)
     return false;
   }
 
@@ -23,13 +25,29 @@ export const validateUrl = (url) => {
     return false;
   }
 
-  const regex =
-    /^\b(?:https?|ftp):\/\/[-A-Za-z0-9+&@#\/%?=~_|!:,.;]+[-A-Za-z0-9+&@#\/%=~_|]$/;
+  const regex = /^\b(?:https?|ftp):\/\/[-A-Za-z0-9+&@#\/%?=~_|!:,.;]+[-A-Za-z0-9+&@#\/%=~_|]$/;
   return regex.test(trimmedValue);
 };
 
-//VALIDACIONES PARA REGISTRO
+export const validateEmail = (email) => {
+  if (typeof email !== 'string' || email.trim() === '') {
+    return false;
+  }
 
+  const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  return regex.test(email.trim());
+};
+
+export const validatePassword = (password) => {
+  if (typeof password !== 'string' || password.trim() === '') {
+    return false;
+  }
+
+  const regex = /^.{3,15}$/;
+  return regex.test(password.trim());
+};
+
+// Funciones de validación específicas para registro
 export const validateNameReg = (field) => {
   const name = field.value.trim();
   const regex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ\s]+$/;
@@ -60,7 +78,7 @@ export const validateSurName = (field) => {
   }
 };
 
-export const validateEmail = (field) => {
+export const validateEmailReg = (field) => {
   const email = field.value.trim();
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
@@ -75,7 +93,7 @@ export const validateEmail = (field) => {
   }
 };
 
-export const validatePassword = (field) => {
+export const validatePasswordReg = (field) => {
   const password = field.value.trim();
   const lettersOnlyRegex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ]+$/;
   const repeatedCharRegex = /(.)\1{4,}/;
