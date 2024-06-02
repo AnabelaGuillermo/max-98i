@@ -38,11 +38,11 @@ export function guardarCategoriasEnLS(categorias) {
     localStorage.setItem('categorias', JSON.stringify(categorias));
 }
 
+export const obtenerUsuarioDeLs =()=>{
+    return JSON.parse(localStorage.getItem('usuarios')) || [];
+}
 
 export const obtenerComentarioDeLs =()=>{
     return JSON.parse(localStorage.getItem('comentarios')) || [];
-
-export const obtenerUsuarioDeLs =()=>{
-    return JSON.parse(localStorage.getItem('usuarios')) || [];
 
 }
