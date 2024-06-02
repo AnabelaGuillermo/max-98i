@@ -90,41 +90,26 @@
       <!-- Portada trailer -->
       <section class="container-fluid trailer-seccion">
         <article class="row">
-          <div class="col-12">
-            <div class="trailer-container">
-              <iframe
-                src="https://www.youtube.com/embed/HijEbYIZfzY"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
+          <div class="col-12 trailer-container">
+            <img id="portada-trailer" src="" alt="Portada del trailer">
           </div>
         </article>
       </section>
 
       <!-- Título y logo -->
-      <section class="container mt-5 d-flex">
+      <section class="container mt-5 d-flex trailer-seccion">
         <article class="row w-100">
           <div class="col-12 col-sm-6">
-            <h2 class="titulo-detalle">The Gunman</h2>
-            <p>Categoría: Acción</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              voluptate quo impedit nostrum autem assumenda ab iusto
-              necessitatibus omnis aliquam, doloremque dicta repellat corporis
-              quidem eveniet enim cum aspernatur laudantium!
-            </p>
-          </div>
-          <div class="col-12 col-sm-6 max-logo-detalle">
-            <img src="../assets/Max_logo.svg.png" alt="Max logo" />
+            <h2 class="titulo-detalle"></h2>
+            <p id="categoria-detalle"></p>
+            <p id="descripcion-detalle"></p>
           </div>
         </article>
       </section>
 
       <!-- Botón Reproducir -->
       <section class="container mt-2">
-        <a class="btn reproducir-detalle" href="#">REPRODUCIR</a>
+        <a class="btn reproducir-detalle" href="#"><i class="fa-solid fa-play"></i> Ver Ahora</a>
       </section>
 
       <!-- Seguir explorando -->
@@ -334,5 +319,6 @@
         </a>
       </section>
     </footer>
+    <script type="module" src="../js/detalle.js"></script>
   </body>
 </html>

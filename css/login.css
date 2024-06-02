@@ -44,3 +44,29 @@ h1{
   #password-mute{
     font-size: 0.75rem;
   }
+  :root {
+    --color-primario: #0230fc;
+    --color-secundario: #6a029a;
+    --color-terciario: #06071c;
+  }
+  
+  .swal-popup-success,
+  .swal-popup-error {
+    background-color: #ffffff !important; /* Fondo blanco */
+  }
+  
+  .swal-title-success,
+  .swal-title-error,
+  .swal-text-success,
+  .swal-text-error {
+    color: var(--color-primario) !important; /* Texto color primario */
+  }
+  
+  .swal-icon-success {
+    color: var(--color-secundario) !important; /* Icono color secundario */
+  }
+  
+  .swal-icon-error {
+    color: var(--color-secundario) !important; /* Icono color secundario */
+  }
+  

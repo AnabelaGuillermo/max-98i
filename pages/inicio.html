@@ -31,6 +31,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/inicio.css" />
   </head>
@@ -80,9 +81,12 @@
               </button>
             </form>
             <a class="nav-link miperfil-max" href="./adminPelisSeries.html"
-              >Mi perfil</a
+              ><i class="fa-regular fa-circle-user fa-2xl"></i></a
             >
           </section>
+          <button id="btn-salir" class="btn btn-danger">
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
         </section>
       </nav>
     </header>
@@ -565,5 +569,8 @@
         </a>
       </section>
     </footer>
+    <script type="module" src="../js/login/logout.js"></script>
+    <script type="module" src="../js/inicio.js"></script>
+    <script type="module" src="../js/utils.js"></script>
   </body>
 </html>
