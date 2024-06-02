@@ -1,8 +1,8 @@
 import {
-  validateEmail,
+  validateEmailReg,
   validateNameReg,
   validateSurName,
-  validatePassword,
+  validatePasswordReg,
 } from "../validators.js";
 
 import { agregarUsuario } from "./abm.js";
@@ -23,11 +23,11 @@ $inputSurName.addEventListener("blur", () => {
 });
 
 $inputEmail.addEventListener("blur", () => {
-  validateEmail($inputEmail);
+  validateEmailReg($inputEmail);
 });
 
 $inputPassword.addEventListener("blur", () => {
-  validatePassword($inputPassword);
+  validatePasswordReg($inputPassword);
 });
 
 $form.addEventListener("submit", (event) => {
@@ -36,11 +36,15 @@ $form.addEventListener("submit", (event) => {
   // Validación de campos
   const isNameValid = validateNameReg($inputName);
   const isSurNameValid = validateSurName($inputSurName);
-  const isEmailValid = validateEmail($inputEmail);
-  const isPasswordValid = validatePassword($inputPassword);
+  const isEmailValid = validateEmailReg($inputEmail);
+  const isPasswordValid = validatePasswordReg($inputPassword);
 
   if (!isNameValid || !isSurNameValid || !isEmailValid || !isPasswordValid) {
-    alert("Por favor, revise los campos e inténtelo de nuevo.");
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Por favor, revise los campos e inténtelo de nuevo.",
+    });
     return;
   }
 

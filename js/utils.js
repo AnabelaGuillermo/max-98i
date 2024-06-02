@@ -37,3 +37,7 @@ export function obtenerCategoriasDeLS() {
 export function guardarCategoriasEnLS(categorias) {
     localStorage.setItem('categorias', JSON.stringify(categorias));
 }
+
+export const obtenerUsuarioDeLs =()=>{
+    return JSON.parse(localStorage.getItem('usuarios')) || [];
+}
