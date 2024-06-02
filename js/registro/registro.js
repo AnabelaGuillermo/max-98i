@@ -7,7 +7,6 @@ import {
 
 import { agregarUsuario } from "./abm.js";
 
-
 // Seleccionando los elementos
 const $form = document.getElementById("form-registro");
 const $inputName = document.getElementById("input-name");
@@ -41,11 +40,10 @@ $form.addEventListener("submit", (event) => {
   const isPasswordValid = validatePasswordReg($inputPassword);
 
   if (!isNameValid || !isSurNameValid || !isEmailValid || !isPasswordValid) {
-    console.log("Campos no válidos, mostrando SweetAlert...");
     Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: 'Por favor, revise los campos e inténtelo de nuevo.',
+      icon: "error",
+      title: "Error",
+      text: "Por favor, revise los campos e inténtelo de nuevo.",
     });
     return;
   }
