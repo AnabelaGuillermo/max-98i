@@ -1,0 +1,76 @@
+.container-wrapper {
+  position: relative;
+}
+
+.peliculas-recomendadas-slider {
+  display: flex;
+  overflow-x: hidden; /* Ocultamos el scroll */
+  gap: 1rem;
+  padding: 1rem;
+  scroll-behavior: smooth; /* Animación suave para el scroll */
+}
+
+.pelicula {
+  flex: 0 0 auto;
+  width: calc((100% - 5rem) / 6); /* Espacio para 6 en escritorio */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.pelicula img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pelicula .titulo {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .pelicula {
+    width: calc((100% - 1rem) / 2); /* Espacio para 2 en móvil */
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0.5rem;
+  transition: transform 0.3s ease; /* Transición suave para el hover */
+}
+
+.arrow.left {
+  left: 50px; /* Añadimos un margen hacia el centro */
+}
+
+.arrow.right {
+  right: 50px; /* Añadimos un margen hacia el centro */
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+@media (max-width: 575.98px) {
+  .arrow.left {
+    left: 10px;
+  }
+
+  .arrow.arrow.right {
+    right: 10px;
+  }
+}
