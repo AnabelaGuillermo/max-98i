@@ -4,17 +4,31 @@
 
 .peliculas-recomendadas-slider {
   display: flex;
-  overflow-x: hidden; /* Ocultamos el scroll */
+  overflow-x: hidden; 
   gap: 1rem;
   padding: 1rem;
-  scroll-behavior: smooth; /* Animación suave para el scroll */
+  scroll-behavior: smooth; 
 }
 
 .pelicula {
   flex: 0 0 auto;
-  width: calc((100% - 5rem) / 6); /* Espacio para 6 en escritorio */
+  width: calc((100% - 5rem) / 6); 
   box-sizing: border-box;
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pelicula:hover {
+  transform: scale(1.05); 
+}
+
+.pelicula:hover img {
+  filter: brightness(1.2); 
+}
+
+.pelicula:hover .titulo {
+  background-color: rgba(0, 0, 0, 0.7); 
+  
 }
 
 .pelicula img {
@@ -33,9 +47,26 @@
   padding: 0.5rem;
 }
 
+.pelicula::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); 
+  transition: background-color 0.3s ease; 
+}
+
+.pelicula:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+
 @media (max-width: 768px) {
   .pelicula {
-    width: calc((100% - 1rem) / 2); /* Espacio para 2 en móvil */
+    width: calc((100% - 1rem) / 2); 
   }
 }
 
@@ -50,19 +81,19 @@
   cursor: pointer;
   z-index: 1;
   padding: 0.5rem;
-  transition: transform 0.3s ease; /* Transición suave para el hover */
+  transition: transform 0.3s ease; 
 }
 
 .arrow.left {
-  left: 50px; /* Añadimos un margen hacia el centro */
+  left: 50px; 
 }
 
 .arrow.right {
-  right: 50px; /* Añadimos un margen hacia el centro */
+  right: 50px; 
 }
 
 .arrow:hover {
-  transform: translateY(-50%) scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
+  transform: translateY(-50%) scale(1.1); 
 }
 
 @media (max-width: 575.98px) {
