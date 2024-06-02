@@ -1,4 +1,4 @@
-import { obtenerPeliculasDeLS, guardarPeliculasEnLS } from './utils.js';
+import { obtenerPeliculasDeLS, guardarPeliculasEnLS } from '../utils.js';
 
 export function agregarPelicula(pelicula) {
     const peliculas = obtenerPeliculasDeLS();
