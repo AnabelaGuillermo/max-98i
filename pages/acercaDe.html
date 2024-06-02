@@ -36,53 +36,31 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar">
         <section class="container-fluid">
-          <a class="navbar-brand" href="./inicio.html">
-            <img
-              src="../assets/Max_logo.svg.png"
-              class="max-logo"
-              alt="Max-logo"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <section class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
+          <article class="seccion-izquierda-nav">
+            <a href="../index.html">
+              <img
+                class="max-logo"
+                src="../assets/Max_logo.svg.png"
+                alt="Max-logo"
+              />
+            </a>
+          </article>
+          <article class="seccion-derecha-nav">
+            <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="./inicio.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./series.html">Series</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./peliculas.html">Películas</a>
+                <a class="nav-link ingresa" href="../pages/login.html"
+                  >INGRESÁ</a
+                >
+                <a
+                  class="btn boton-registro d-inline-block"
+                  href="../pages/registro.html"
+                  >SUSCRÍBETE AHORA</a
+                >
               </li>
             </ul>
-            <form class="d-flex search-form">
-              <input
-                class="form-control me-2 input-boton"
-                type="search"
-                placeholder="Buscar..."
-                aria-label="Search"
-              />
-              <button class="btn boton-search" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
-            <a class="nav-link miperfil-max" href="./adminPelisSeries.html"
-              >Mi perfil</a
-            >
-          </section>
+          </article>
         </section>
       </nav>
     </header>

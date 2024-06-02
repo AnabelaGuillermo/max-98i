@@ -32,17 +32,29 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/peliculasnav.css">
-    <link rel="stylesheet" href="../css/resultadosCategorias.css">
+    <link rel="stylesheet" href="../css/peliculasnav.css" />
+    <link rel="stylesheet" href="../css/resultadosCategorias.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg">
         <section class="container-fluid">
           <a class="navbar-brand" href="./inicio.html">
-            <img src="../assets/Max_logo.svg.png" class="max-logo" alt="Max-logo">
+            <img
+              src="../assets/Max_logo.svg.png"
+              class="max-logo"
+              alt="Max-logo"
+            />
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <section class="collapse navbar-collapse" id="navbarNav">
@@ -57,18 +69,26 @@
                 <a class="nav-link" href="./peliculas.html">Películas</a>
               </li>
             </ul>
-            <form class="d-flex search-form">
-              <input class="form-control me-2 input-boton" type="search" placeholder="Buscar..." aria-label="Search">
-              <button class="btn boton-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <form class="d-flex search-form" id="searchForm">
+              <input
+                class="form-control me-2 input-boton"
+                type="search"
+                placeholder="Buscar..."
+                aria-label="Search"
+                id="searchInput"
+              />
+              <button class="btn boton-search" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
             </form>
-            <a class="nav-link miperfil-max" href="./adminPelisSeries.html">Mi perfil</a>
+            <a class="nav-link miperfil-max" href="./adminPelisSeries.html"
+              >Mi perfil</a
+            >
           </section>
         </section>
       </nav>
-      
     </header>
     <main>
-
       <select id="filtro-categoria" class="form-select mb-3 container">
         <option value="todos">Todos</option>
         <option value="Comedia">Comedia</option>
@@ -78,61 +98,61 @@
         <option value="Crimen">Crimen</option>
         <option value="Romanticas">Románticas</option>
         <option value="CienciaFiccion">Ciencia Ficción</option>
-    </select>
+      </select>
       <section class="container resultados-peliculas-section mt-5">
         <article class="row" id="resultados-peliculas"></article>
-    </section>
+      </section>
     </main>
     <footer>
-        <section class="container footer-max">
-          <hr />
-          <article class="mt-1">
-            <a class="a-privacidad" href="./politica.html"
-              >Política de Privacidad</a
-            >
-            <a class="a-uso" href="./terminos.html">Términos de Uso</a>
-            <a class="a-acercade" href="./acercaDe.html">Acerca De</a>
-            <a class="a-contacto" href="./contacto.html">Contacto</a>
-          </article>
-          <article class="mt-1 copy-max">
-            <p class="mt-3">
-              &copy; 2024 WarnerMedia Direct Latin America, LLC. Todos los
-              derechos reservados. Max se usa bajo licencia.
-            </p>
-          </article>
-        </section>
-        <section class="container-fluid redes-max mt-1">
-          <a href="https://www.facebook.com/">
-            <img
-              class="a-facebook"
-              src="../assets/social_iconfacebook.png"
-              alt="Facebook-Max"
-            />
-          </a>
-          <a href="https://www.instagram.com/">
-            <img
-              class="a-instagram"
-              src="../assets/social_iconinstagram.png"
-              alt="Instagram-Max"
-            />
-          </a>
-          <a href="https://www.youtube.com/">
-            <img
-              class="a-youtube"
-              src="../assets/social_iconyoutube.png"
-              alt="YouTube-Max"
-            />
-          </a>
-          <a href="https://www.x.com/">
-            <img class="a-x" src="../assets/x.png" alt="X-Max" />
-          </a>
-          <a href="https://www.tiktok.com/">
-            <img class="a-tiktok" src="../assets/tik_tok.png" alt="TikTok-Max" />
-          </a>
-        </section>
-      </footer>
-      <script type="module" src="../js/utils.js"></script>
-      <script type="module" src="../js/peliculasnav.js"></script>
-    </body>
-  </html>
-  
+      <section class="container footer-max">
+        <hr />
+        <article class="mt-1">
+          <a class="a-privacidad" href="./politica.html"
+            >Política de Privacidad</a
+          >
+          <a class="a-uso" href="./terminos.html">Términos de Uso</a>
+          <a class="a-acercade" href="./acercaDe.html">Acerca De</a>
+          <a class="a-contacto" href="./contacto.html">Contacto</a>
+        </article>
+        <article class="mt-1 copy-max">
+          <p class="mt-3">
+            &copy; 2024 WarnerMedia Direct Latin America, LLC. Todos los
+            derechos reservados. Max se usa bajo licencia.
+          </p>
+        </article>
+      </section>
+      <section class="container-fluid redes-max mt-1">
+        <a href="https://www.facebook.com/">
+          <img
+            class="a-facebook"
+            src="../assets/social_iconfacebook.png"
+            alt="Facebook-Max"
+          />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img
+            class="a-instagram"
+            src="../assets/social_iconinstagram.png"
+            alt="Instagram-Max"
+          />
+        </a>
+        <a href="https://www.youtube.com/">
+          <img
+            class="a-youtube"
+            src="../assets/social_iconyoutube.png"
+            alt="YouTube-Max"
+          />
+        </a>
+        <a href="https://www.x.com/">
+          <img class="a-x" src="../assets/x.png" alt="X-Max" />
+        </a>
+        <a href="https://www.tiktok.com/">
+          <img class="a-tiktok" src="../assets/tik_tok.png" alt="TikTok-Max" />
+        </a>
+      </section>
+    </footer>
+    <script type="module" src="../js/utils.js"></script>
+    <script type="module" src="../js/peliculasnav.js"></script>
+    <script type="module" src="../js/busqueda.js"></script>
+  </body>
+</html>
