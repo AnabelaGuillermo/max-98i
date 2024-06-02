@@ -36,32 +36,28 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
-        <section class="container-fluid">
+      <nav class="navbar navbar-expand-lg">
+        <section class="container-fluid nav-container-pages">
           <article class="seccion-izquierda-nav">
             <a href="../index.html">
-              <img
-                class="max-logo"
-                src="../assets/Max_logo.svg.png"
-                alt="Max-logo"
-              />
+              <img class="max-logo" src="../assets/Max_logo.svg.png" alt="Max-logo" />
             </a>
           </article>
-          <article class="seccion-derecha-nav">
-            <ul class="navbar-nav">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <article class="collapse navbar-collapse seccion-derecha-nav" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link ingresa" href="./login.html">INGRESÁ</a>
-                <a
-                  class="btn boton-registro d-inline-block"
-                  href="./registro.html"
-                  >SUSCRÍBETE AHORA</a
-                >
+              </li>
+              <li class="nav-item">
+                <a class="btn boton-registro d-inline-block" href="./registro.html">SUSCRÍBETE AHORA</a>
               </li>
             </ul>
           </article>
         </section>
       </nav>
-      
     </header>
     <main>
       <section class="container terminos-politica">
@@ -170,5 +166,7 @@
         </a>
       </section>
     </footer>
+    <script type="module" src="../js/nav.js"></script>
+    <script type="module" src="../js/busqueda.js"></script>
   </body>
 </html>

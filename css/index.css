@@ -55,6 +55,7 @@
   text-align: center;
 }
 
+
 @media (max-width: 768px) {
   .logo-portada {
     width: 200px;
@@ -65,5 +66,20 @@
 @media (max-width: 768px) {
   .boton-registro-portada {
     width: 200px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  .seccion-derecha-nav {
+    text-align: center;
+  }
+  .ingresa,
+  .boton-registro {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
   }
 }

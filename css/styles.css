@@ -19,10 +19,11 @@
 
 body {
   background-color: var(--color-terciario);
+  margin: 0;
+  padding: 0;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -35,6 +36,8 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item.selected {
@@ -57,24 +60,47 @@ main {
 nav {
   background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: 0;
 }
 
 .navbar-nav {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container-pages {
+  padding-top: 10px;
+}
+
+.navbar-nav-pages {
+  & ul {
+    display: flex;
+    justify-content: end;
+  }
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  & a {
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-  }
+  margin: 0 15px;
+  padding: 0;
+}
+
+.nav-item a {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-link:hover {
@@ -91,15 +117,19 @@ nav {
 }
 
 .boton-registro {
-  margin: 0px 30px;
   font-size: 14px;
   font-weight: 500;
   color: white;
   background-color: var(--color-primario);
+  margin-right: 30px;
 }
 
 .boton-registro:hover {
   background-color: var(--color-secundario);
+}
+
+#navbarNav > ul > li:nth-child(2) > a {
+  padding: 5px 15px 5px 15px;
 }
 
 .boton-search {
@@ -129,6 +159,10 @@ nav {
   color: rgb(190, 190, 190);
 }
 
+#btn-salir {
+  margin-left: 30px;
+}
+
 .navbar-toggler {
   background-color: white;
 }
@@ -149,13 +183,11 @@ a {
   text-decoration: none;
 }
 
-.footer-max {
-  & a {
-    color: white;
-    font-size: 10px;
-    font-weight: 500;
-    margin: 0px 50px;
-  }
+.footer-max a {
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  margin: 0px 50px;
 }
 
 .a-privacidad:hover,
@@ -172,10 +204,11 @@ a {
 .redes-max {
   background-color: rgb(17, 17, 17);
   padding: 5px;
-  & img {
-    height: 20px;
-    margin: 0px 10px;
-  }
+}
+
+.redes-max img {
+  height: 20px;
+  margin: 0px 10px;
 }
 
 .a-facebook:hover,
@@ -187,25 +220,120 @@ a {
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
+.navbar-nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  padding: 0;
+}
+
+.nav-link {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 3px;
+  padding-bottom: 10px;
+}
+
+.navbar-primary .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-primary .nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  padding: 0;
+}
+
+.navbar-primary .nav-link {
+  padding: 0;
+  margin: 0;
+}
+
+
 @media (max-width: 768px) {
-  .nav-item {
-    flex-direction: column;
+  .seccion-derecha-nav {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    margin-top: 10px;
   }
 
-  .seccion-derecha-nav {
-    justify-content: center;
-    margin-top: 10px;
+  .nav-item {
+    flex-direction: row;
+    align-items: center;
   }
 
   .nav-link {
     margin-bottom: 10px;
   }
+
+  .nav-link.ingresa {
+    margin-right: 0.5rem;
+  }
+
+  .boton-registro {
+    margin-left: 0.5rem;
+  }
+
+  #btn-salir {
+    margin-left: 0;
+    width: auto;
+    display: block;
+    margin: 10px auto;
+  }
 }
 
-@media (max-width: 768px) {
-  .nav-link.ingresa {
-    margin-right: 0;
+@media (max-width: 450px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .seccion-izquierda-nav {
+    margin-bottom: 10px;
+  }
+
+  .seccion-derecha-nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link.ingresa,
+  .boton-registro {
+    margin: 5px 0;
+  }
+
+  #btn-salir {
+    margin: 10px auto;
   }
 }
 
@@ -213,9 +341,16 @@ a {
   .miperfil-max {
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    margin-top: 10px;
   }
 }
 
