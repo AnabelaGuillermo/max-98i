@@ -1,5 +1,5 @@
 import {
-  validateEmail,
+  validateEmailReg,
   validateNameReg,
   validateSurName,
 } from "../validators.js";
@@ -20,7 +20,7 @@ $inputApellido.addEventListener("blur", () => {
 });
 
 $inputEmail.addEventListener("blur", () => {
-  validateEmail($inputEmail);
+  validateEmailReg($inputEmail);
 });
 
 $form.addEventListener("submit", (event) => {
@@ -29,10 +29,14 @@ $form.addEventListener("submit", (event) => {
   //valiadacion de campos
   const isNameValid = validateNameReg($inputNombre);
   const isSurNameValid = validateSurName($inputApellido);
-  const isEmailValid = validateEmail($inputEmail);
+  const isEmailValid = validateEmailReg($inputEmail);
 
   if (!isNameValid || !isSurNameValid || !isEmailValid) {
-    alert("por favor, revise los campos e intentelo de nuevo");
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Por favor, revise los campos e inténtelo de nuevo'
+    });
     return;
   }
 
@@ -42,7 +46,11 @@ $form.addEventListener("submit", (event) => {
 
   agregarComentario(nombre, apellido, email);
 
-  alert("Su comentario ha sido enviado correctamente.");
+  Swal.fire({
+    icon: 'success',
+    title: '¡Enviado!',
+    text: 'Su comentario ha sido enviado correctamente.'
+  });
 
   $form.reset();
   $inputNombre.classList.remove("is-valid", "is-invalid");
