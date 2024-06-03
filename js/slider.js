@@ -87,16 +87,16 @@ document.querySelectorAll(".arrow.right").forEach((arrow) => {
 });
 
 // Obtener las películas de Local Storage y seleccionarlas de manera aleatoria
-const peliculas1 = obtenerPeliculasDeLS();
-const peliculas2 = obtenerPeliculasDeLS();
-const peliculas3 = obtenerPeliculasDeLS();
+const peliculas1 = obtenerPeliculasDeLS().filter(pelicula => pelicula.publicada === 'Sí');
+const peliculas2 = obtenerPeliculasDeLS().filter(pelicula => pelicula.publicada === 'Sí');
+const peliculas3 = obtenerPeliculasDeLS().filter(pelicula => pelicula.publicada === 'Sí');
 
 if (
   peliculas1.length === 0 ||
   peliculas2.length === 0 ||
   peliculas3.length === 0
 ) {
-  console.error("No se encontraron películas en el Local Storage.");
+  console.error("No se encontraron películas publicadas en el Local Storage.");
 } else {
   const peliculasAleatorias1 = obtenerPeliculasAleatorias(peliculas1, 10);
   const peliculasAleatorias2 = obtenerPeliculasAleatorias(peliculas2, 10);

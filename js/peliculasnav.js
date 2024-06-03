@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultadosPeliculas = document.getElementById('resultados-peliculas');
     const filtroCategoria = document.getElementById('filtro-categoria');
     
-    let peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.tipo === 'Pelicula');
+    // Filtrar por tipo y publicación
+    let peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.tipo === 'Pelicula' && pelicula.publicada === 'Sí');
+    
     let currentPage = 0;
     const itemsPerPage = 12;
     let categoriaActual = 'todos';

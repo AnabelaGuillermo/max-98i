@@ -2,7 +2,7 @@ import { obtenerPeliculasDeLS } from '../js/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resultadosTerror = document.getElementById('resultados-categorias-terror');
-    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'Terror');
+    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'Terror' && pelicula.publicada  === 'Sí');
 
     let currentPage = 0;
     const itemsPerPage = 12;

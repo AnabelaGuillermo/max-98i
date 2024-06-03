@@ -4,24 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultadosSeries = document.getElementById("resultados-peliculas"); // Cambiado a resultados-peliculas
   const filtroCategoria = document.getElementById("filtro-categoria");
 
-  let series = obtenerPeliculasDeLS();
-  console.log(series); // Añadido para verificar si se están cargando las series correctamente
+  // Filtrar por tipo y publicación
+  let series = obtenerPeliculasDeLS().filter(serie => serie.tipo === 'Serie' && serie.publicada === 'Sí');
 
   let currentPage = 0;
   const itemsPerPage = 12;
   let categoriaActual = "todos";
 
   function cargarSeries() {
-    console.log("Cargando series..."); // Añadido para verificar si se llama a esta función
-
     const start = currentPage * itemsPerPage;
     const end = start + itemsPerPage;
     const seriesFiltradas = series.filter(
       (serie) =>
-        (categoriaActual === "todos" || serie.categoria === categoriaActual) &&
-        serie.tipo === "Serie"
+        (categoriaActual === "todos" || serie.categoria === categoriaActual)
     );
-    console.log(seriesFiltradas); // Añadido para verificar si se están filtrando las series correctamente
 
     const seriesToLoad = seriesFiltradas.slice(start, end);
 

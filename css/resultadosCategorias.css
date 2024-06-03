@@ -21,3 +21,11 @@
   width: 100%;
   padding: 10px;
 }
+
+.tarjeta-resultados-categorias {
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-resultados-categorias:hover {
+  transform: scale(1.1);
+}
