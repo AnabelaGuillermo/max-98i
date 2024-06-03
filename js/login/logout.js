@@ -33,7 +33,8 @@ $botonLogout.addEventListener('click', () => {
 
         // a. Eliminar la sesion de SS
         sessionStorage.removeItem('usuario');
-        sessionStorage.removeItem('estaLogueado');
+        localStorage.removeItem('estaLogueado');
+
 
         // b. Redirigir al usuario
         window.location.assign('/');

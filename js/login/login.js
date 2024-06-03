@@ -1,5 +1,4 @@
 import { estaLogueado } from './utils.js';
-import { validateEmail, validatePassword } from '../validators.js';
 import { Usuario } from './usuario.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const $inputEmail = document.getElementById('email');
   const $inputContraseña = document.getElementById('password');
   const $form = document.querySelector('form');
-  const $alertCredenciales = document.getElementById('alert-login');
 
   if ($form && $inputEmail && $inputContraseña) {
     $form.addEventListener('submit', (e) => {
@@ -27,16 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
           title: 'Inicio de sesión correcto',
           text: 'Redirigiendo...',
           icon: 'success',
-          customClass: {
-            popup: 'swal-popup-success',
-            title: 'swal-title-success',
-            content: 'swal-text-success',
-            icon: 'swal-icon-success'
-          },
           timer: 2000,
           showConfirmButton: false
         }).then(() => {
-          localStorage.setItem('loggedIn', 'true');
+          localStorage.setItem('estaLogueado', 'true');
           window.location.replace('/pages/inicio.html');
         });
       } else {
@@ -44,12 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
           title: 'Credenciales incorrectas',
           text: 'Por favor, intente de nuevo.',
           icon: 'error',
-          customClass: {
-            popup: 'swal-popup-error',
-            title: 'swal-title-error',
-            content: 'swal-text-error',
-            icon: 'swal-icon-error'
-          },
           timer: 2000,
           showConfirmButton: false
         });
