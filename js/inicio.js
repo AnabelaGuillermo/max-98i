@@ -21,7 +21,7 @@ function cargarPeliculasDestacadasEnCarrusel() {
     const slideHTML = `
       <div class="carousel-item ${isActive}">
         <img src="${pelicula.portada}" class="d-block w-100" alt="${pelicula.titulo}">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption">
           <h5>${pelicula.titulo}</h5>
           <p>${pelicula.descripcion}</p>
           <a class="btn link-reproducir" href="${pelicula.video}" target="_blank"><i class="fa-regular fa-circle-play"></i> REPRODUCIR</a>
