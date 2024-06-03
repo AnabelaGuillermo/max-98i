@@ -2,7 +2,7 @@ import { obtenerPeliculasDeLS } from '../js/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resultadosRomanticas = document.getElementById('resultados-categorias-romanticas');
-    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'Romanticas');
+    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'Romanticas' && pelicula.publicada  === 'Sí');
 
     let currentPage = 0;
     const itemsPerPage = 12;

@@ -25,3 +25,11 @@
 .card-title {
   margin: 0;
 }
+
+.tarjeta-busqueda {
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-busqueda:hover {
+  transform: scale(1.1);
+}

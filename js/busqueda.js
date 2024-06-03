@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const series = obtenerSeriesDeLS();
 
   const allItems = [...peliculas, ...series];
-  const results = allItems.filter(item => item.titulo.toLowerCase().includes(searchQuery.toLowerCase()));
+  const results = allItems.filter(item => item.publicada === 'Sí' && item.titulo.toLowerCase().includes(searchQuery.toLowerCase()));
 
   displayResults(results);
 });

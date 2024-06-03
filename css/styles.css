@@ -334,6 +334,7 @@ a {
   .boton-registro {
     margin: 5px 0;
   }
+
 }
 
 /* Estilos adicionales para dispositivos móviles */
@@ -353,6 +354,7 @@ a {
   #btn-salir {
     display: flex;
   }
+
 
 }
 
