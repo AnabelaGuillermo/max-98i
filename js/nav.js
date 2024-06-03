@@ -3,7 +3,7 @@ import { estaLogueado } from './login/utils.js';
 document.addEventListener('DOMContentLoaded', function () {
   const navActual = document.querySelector('.primer-nav');
 
-  if (estaLogueado()) {
+  if (navActual && estaLogueado()) { // Verificar si navActual es válido y si el usuario está logueado
     const navNuevo = document.createElement('nav');
     navNuevo.classList.add('navbar', 'navbar-expand-lg', 'navbar-primary');
 
@@ -110,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     navNuevo.appendChild(containerFluid);
 
-    navActual.parentNode.replaceChild(navNuevo, navActual);
+    // Ocultar el nav actual y mostrar el nuevo nav
+    navActual.style.display = 'none'; // Ocultar el nav actual solo si se encontró
+    navActual.parentNode.insertBefore(navNuevo, navActual.nextSibling);
   }
 });
