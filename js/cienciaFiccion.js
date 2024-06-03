@@ -2,7 +2,7 @@ import { obtenerPeliculasDeLS } from '../js/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resultadosCienciaFiccion = document.getElementById('resultados-categorias-cienciaFiccion');
-    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'CienciaFiccion' && pelicula.publicada  === 'Sí');
+    let peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'CienciaFiccion' && pelicula.publicada === 'Sí');
 
     let currentPage = 0;
     const itemsPerPage = 12;
@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const start = currentPage * itemsPerPage;
         const end = start + itemsPerPage;
         const moviesToLoad = peliculas.slice(start, end);
+
+        if (moviesToLoad.length === 0 && currentPage === 0) {
+            const mensajeNoResultados = document.createElement('p');
+            mensajeNoResultados.textContent = 'No se encontraron resultados.';
+            resultadosCienciaFiccion.appendChild(mensajeNoResultados);
+            return;
+        }
 
         moviesToLoad.forEach(pelicula => {
             const col = document.createElement('div');

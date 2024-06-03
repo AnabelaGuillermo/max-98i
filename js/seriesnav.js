@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const filtroCategoria = document.getElementById("filtro-categoria");
 
   // Filtrar por tipo y publicación
-  let series = obtenerPeliculasDeLS().filter(serie => serie.tipo === 'Serie' && serie.publicada === 'Sí');
+  let series = obtenerPeliculasDeLS().filter(
+    (serie) => serie.tipo === "Serie" && serie.publicada === "Sí"
+  );
 
   let currentPage = 0;
   const itemsPerPage = 12;
@@ -16,14 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const end = start + itemsPerPage;
     const seriesFiltradas = series.filter(
       (serie) =>
-        (categoriaActual === "todos" || serie.categoria === categoriaActual)
+        categoriaActual === "todos" || serie.categoria === categoriaActual
     );
+
+    if (seriesFiltradas.length === 0 && currentPage === 0) {
+      const mensajeNoResultados = document.createElement("p");
+      mensajeNoResultados.textContent = "No se encontraron resultados.";
+      resultadosSeries.appendChild(mensajeNoResultados);
+      return;
+    }
 
     const seriesToLoad = seriesFiltradas.slice(start, end);
 
     seriesToLoad.forEach((serie) => {
       const col = document.createElement("div");
-      col.className = "col-6 col-md-4 col-lg-2 tarjeta-resultados-categorias";
+      col.className =
+        "col-6 col-md-4 col-lg-2 tarjeta-resultados-categorias";
 
       const img = document.createElement("img");
       img.src = serie.caratula;

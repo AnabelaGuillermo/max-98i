@@ -2,7 +2,7 @@ import { obtenerPeliculasDeLS } from '../js/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resultadosComedia = document.getElementById('resultados-categorias-comedia');
-    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'Comedia' && pelicula.publicada  === 'Sí');
+    let peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'Comedia' && pelicula.publicada === 'Sí');
 
     let currentPage = 0;
     const itemsPerPage = 12;
@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const start = currentPage * itemsPerPage;
         const end = start + itemsPerPage;
         const moviesToLoad = peliculas.slice(start, end);
+
+        if (moviesToLoad.length === 0 && currentPage === 0) {
+            const mensajeNoResultados = document.createElement('p');
+            mensajeNoResultados.textContent = 'No se encontraron resultados.';
+            resultadosComedia.appendChild(mensajeNoResultados);
+            return;
+        }
 
         moviesToLoad.forEach(pelicula => {
             const col = document.createElement('div');
