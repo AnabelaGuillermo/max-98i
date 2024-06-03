@@ -2,7 +2,7 @@ import { obtenerPeliculasDeLS } from '../js/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resultadosCienciaFiccion = document.getElementById('resultados-categorias-cienciaFiccion');
-    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'CienciaFiccion');
+    const peliculas = obtenerPeliculasDeLS().filter(pelicula => pelicula.categoria === 'CienciaFiccion' && pelicula.publicada  === 'Sí');
 
     let currentPage = 0;
     const itemsPerPage = 12;

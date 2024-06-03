@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const peliculas = obtenerPeliculasDeLS();
     const series = obtenerSeriesDeLS();
     
-    // Combinar películas y series
-    const todasLasEntradas = [...peliculas, ...series];
+    // Combinar películas y series y filtrar por publicación
+    const todasLasEntradas = [...peliculas, ...series].filter(item => item.publicada === 'Sí');
 
     let currentPage = 0;
     const itemsPerPage = 12;

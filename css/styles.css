@@ -272,7 +272,7 @@ a {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .seccion-derecha-nav {
     display: flex;
     justify-content: center;
@@ -298,10 +298,13 @@ a {
   }
 
   #btn-salir {
-    margin-left: 0;
     width: auto;
-    display: block;
-    margin: 10px auto;
+    margin: auto;
+  }
+
+  .fa-circle-user {
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 }
 
@@ -331,13 +334,9 @@ a {
   .boton-registro {
     margin: 5px 0;
   }
-
-  #btn-salir {
-    margin: 10px auto;
-  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .miperfil-max {
     flex-direction: column;
     align-items: center;
@@ -348,13 +347,13 @@ a {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .search-form {
     margin-top: 10px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .footer-max {
     display: flex;
     flex-direction: column;
