@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const peliculasFiltradas = peliculas.filter(pelicula => 
             categoriaActual === 'todos' || pelicula.categoria === categoriaActual
         );
+
+        if (peliculasFiltradas.length === 0 && currentPage === 0) {
+            const mensajeNoResultados = document.createElement('p');
+            mensajeNoResultados.textContent = 'No se encontraron resultados.';
+            resultadosPeliculas.appendChild(mensajeNoResultados);
+            return;
+        }
+
         const moviesToLoad = peliculasFiltradas.slice(start, end);
 
         moviesToLoad.forEach(pelicula => {

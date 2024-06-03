@@ -1,5 +1,4 @@
-import { obtenerPeliculasDeLS } from '../js/utils.js';
-import { obtenerSeriesDeLS } from '../js/utils.js';
+import { obtenerPeliculasDeLS, obtenerSeriesDeLS } from '../js/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const resultados = document.getElementById('resultados-categorias-verTodo');
@@ -16,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const start = currentPage * itemsPerPage;
         const end = start + itemsPerPage;
         const itemsToLoad = todasLasEntradas.slice(start, end);
+
+        if (itemsToLoad.length === 0 && currentPage === 0) {
+            const mensajeNoResultados = document.createElement('p');
+            mensajeNoResultados.textContent = 'No se encontraron resultados.';
+            resultados.appendChild(mensajeNoResultados);
+            return;
+        }
 
         itemsToLoad.forEach(item => {
             const col = document.createElement('div');

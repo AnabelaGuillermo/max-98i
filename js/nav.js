@@ -1,134 +1,115 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const estaLogueado = () => {
-      return localStorage.getItem('loggedIn') === 'true';
-    };
-  
-    if (estaLogueado()) {
-      const navbarContainer = document.querySelector('.navbar');
-      if (navbarContainer) {
-        // Limpiar el contenido actual del navbar
-        navbarContainer.innerHTML = '';
-  
-        // Crear los nuevos elementos del navbar
-        const nav = document.createElement('nav');
-        nav.className = 'navbar navbar-expand-lg navbar-primary';
-  
-        const container = document.createElement('section');
-        container.className = 'container-fluid';
-  
-        const brandLink = document.createElement('a');
-        brandLink.className = 'navbar-brand';
-        brandLink.href = './inicio.html';
-  
-        const brandImg = document.createElement('img');
-        brandImg.src = '../assets/Max_logo.svg.png';
-        brandImg.className = 'max-logo';
-        brandImg.alt = 'Max-logo';
-        brandLink.appendChild(brandImg);
-  
-        const toggler = document.createElement('button');
-        toggler.className = 'navbar-toggler';
-        toggler.type = 'button';
-        toggler.setAttribute('data-bs-toggle', 'collapse');
-        toggler.setAttribute('data-bs-target', '#navbarNav');
-        toggler.setAttribute('aria-controls', 'navbarNav');
-        toggler.setAttribute('aria-expanded', 'false');
-        toggler.setAttribute('aria-label', 'Toggle navigation');
-        
-        const togglerIcon = document.createElement('span');
-        togglerIcon.className = 'navbar-toggler-icon';
-        toggler.appendChild(togglerIcon);
-  
-        const collapseSection = document.createElement('section');
-        collapseSection.className = 'collapse navbar-collapse';
-        collapseSection.id = 'navbarNav';
-  
-        const navList = document.createElement('ul');
-        navList.className = 'navbar-nav me-auto';
-  
-        const navItem1 = document.createElement('li');
-        navItem1.className = 'nav-item';
-        const navLink1 = document.createElement('a');
-        navLink1.className = 'nav-link';
-        navLink1.href = './inicio.html';
-        navLink1.textContent = 'Inicio';
-        navItem1.appendChild(navLink1);
-  
-        const navItem2 = document.createElement('li');
-        navItem2.className = 'nav-item';
-        const navLink2 = document.createElement('a');
-        navLink2.className = 'nav-link';
-        navLink2.href = './series.html';
-        navLink2.textContent = 'Series';
-        navItem2.appendChild(navLink2);
-  
-        const navItem3 = document.createElement('li');
-        navItem3.className = 'nav-item';
-        const navLink3 = document.createElement('a');
-        navLink3.className = 'nav-link';
-        navLink3.href = './peliculas.html';
-        navLink3.textContent = 'Películas';
-        navItem3.appendChild(navLink3);
-  
-        navList.appendChild(navItem1);
-        navList.appendChild(navItem2);
-        navList.appendChild(navItem3);
-  
-        const searchForm = document.createElement('form');
-        searchForm.className = 'd-flex search-form';
-        searchForm.id = 'searchForm';
-  
-        const searchInput = document.createElement('input');
-        searchInput.className = 'form-control me-2 input-boton';
-        searchInput.type = 'search';
-        searchInput.placeholder = 'Buscar...';
-        searchInput.setAttribute('aria-label', 'Search');
-        searchInput.id = 'searchInput';
-  
-        const searchButton = document.createElement('button');
-        searchButton.className = 'btn boton-search';
-        searchButton.type = 'submit';
-        const searchIcon = document.createElement('i');
-        searchIcon.className = 'fa-solid fa-magnifying-glass';
-        searchButton.appendChild(searchIcon);
-  
-        searchForm.appendChild(searchInput);
-        searchForm.appendChild(searchButton);
-  
-        const profileLink = document.createElement('a');
-        profileLink.className = 'nav-link miperfil-max';
-        profileLink.href = './adminPelisSeries.html';
-        const profileIcon = document.createElement('i');
-        profileIcon.className = 'fa-regular fa-circle-user fa-2xl';
-        profileLink.appendChild(profileIcon);
-  
-        const logoutButton = document.createElement('button');
-        logoutButton.id = 'btn-salir';
-        logoutButton.className = 'btn btn-danger';
-        const logoutIcon = document.createElement('i');
-        logoutIcon.className = 'fas fa-sign-out-alt';
-        logoutButton.appendChild(logoutIcon);
-  
-        // Append all created elements to their respective parents
-        collapseSection.appendChild(navList);
-        collapseSection.appendChild(searchForm);
-        collapseSection.appendChild(profileLink);
-  
-        container.appendChild(brandLink);
-        container.appendChild(toggler);
-        container.appendChild(collapseSection);
-        container.appendChild(logoutButton);
-  
-        nav.appendChild(container);
-  
-        navbarContainer.appendChild(nav);
-  
-        // Añadir funcionalidad para el botón de salir
-        logoutButton.addEventListener('click', () => {
-          localStorage.removeItem('loggedIn');
-          window.location.replace('/pages/login.html');
-        });
-      }
-    }
-  });
-  
+import { estaLogueado } from './login/utils.js';
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navActual = document.querySelector('.primer-nav');
+
+  if (estaLogueado()) {
+    const navNuevo = document.createElement('nav');
+    navNuevo.classList.add('navbar', 'navbar-expand-lg', 'navbar-primary');
+
+    const containerFluid = document.createElement('section');
+    containerFluid.classList.add('container-fluid');
+
+    const navbarBrand = document.createElement('a');
+    navbarBrand.classList.add('navbar-brand');
+    navbarBrand.href = '#';
+
+    const logoImg = document.createElement('img');
+    logoImg.classList.add('max-logo');
+    logoImg.src = '../assets/Max_logo.svg.png';
+    logoImg.alt = 'Max-logo';
+    navbarBrand.appendChild(logoImg);
+
+    containerFluid.appendChild(navbarBrand);
+
+    const navbarToggler = document.createElement('button');
+    navbarToggler.classList.add('navbar-toggler');
+    navbarToggler.type = 'button';
+    navbarToggler.setAttribute('data-bs-toggle', 'collapse');
+    navbarToggler.setAttribute('data-bs-target', '#navbarNav');
+    navbarToggler.setAttribute('aria-controls', 'navbarNav');
+    navbarToggler.setAttribute('aria-expanded', 'false');
+    navbarToggler.setAttribute('aria-label', 'Toggle navigation');
+
+    const navbarTogglerIcon = document.createElement('span');
+    navbarTogglerIcon.classList.add('navbar-toggler-icon');
+    navbarToggler.appendChild(navbarTogglerIcon);
+
+    containerFluid.appendChild(navbarToggler);
+
+    const navbarCollapse = document.createElement('section');
+    navbarCollapse.classList.add('collapse', 'navbar-collapse');
+    navbarCollapse.id = 'navbarNav';
+
+    const navbarNav = document.createElement('ul');
+    navbarNav.classList.add('navbar-nav', 'me-auto');
+
+    const navItems = [
+      { text: 'Inicio', href: './inicio.html' },
+      { text: 'Series', href: './series.html' },
+      { text: 'Películas', href: './peliculas.html' }
+    ];
+
+    navItems.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.classList.add('nav-item');
+
+      const link = document.createElement('a');
+      link.classList.add('nav-link');
+      link.href = item.href;
+      link.textContent = item.text;
+
+      listItem.appendChild(link);
+      navbarNav.appendChild(listItem);
+    });
+
+    navbarCollapse.appendChild(navbarNav);
+    containerFluid.appendChild(navbarCollapse);
+
+    const searchForm = document.createElement('form');
+    searchForm.classList.add('d-flex', 'search-form');
+    searchForm.id = 'searchForm';
+
+    const searchInput = document.createElement('input');
+    searchInput.classList.add('form-control', 'me-2', 'input-boton');
+    searchInput.type = 'search';
+    searchInput.placeholder = 'Buscar...';
+    searchInput.setAttribute('aria-label', 'Search');
+    searchInput.id = 'searchInput';
+
+    const searchButton = document.createElement('button');
+    searchButton.classList.add('btn', 'boton-search');
+    searchButton.type = 'submit';
+
+    const searchIcon = document.createElement('i');
+    searchIcon.classList.add('fa-solid', 'fa-magnifying-glass');
+    searchButton.appendChild(searchIcon);
+
+    searchForm.appendChild(searchInput);
+    searchForm.appendChild(searchButton);
+    containerFluid.appendChild(searchForm);
+
+    const userProfileLink = document.createElement('a');
+    userProfileLink.classList.add('nav-link', 'miperfil-max');
+    userProfileLink.href = './adminPelisSeries.html';
+
+    const userProfileIcon = document.createElement('i');
+    userProfileIcon.classList.add('fa-regular', 'fa-circle-user', 'fa-2xl');
+    userProfileLink.appendChild(userProfileIcon);
+    containerFluid.appendChild(userProfileLink);
+
+    const signOutButton = document.createElement('button');
+    signOutButton.id = 'btn-salir';
+    signOutButton.classList.add('btn', 'btn-danger');
+
+    const signOutIcon = document.createElement('i');
+    signOutIcon.classList.add('fas', 'fa-sign-out-alt');
+    signOutButton.appendChild(signOutIcon);
+
+    containerFluid.appendChild(signOutButton);
+
+    navNuevo.appendChild(containerFluid);
+
+    navActual.parentNode.replaceChild(navNuevo, navActual);
+  }
+});
