@@ -6,7 +6,7 @@ Este proyecto fue desarrollado por el Grupo 5 de Rolling CodeSchool como parte d
 
 ## Integrantes
 
-- [Benjamin Gimenez](https://www.github.com/octokatherine)
+- [Benjamin Gimenez](https://github.com/BenjaminGimenez)
 
 - [Anabela Guillermo](https://github.com/AnabelaGuillermo)
 
