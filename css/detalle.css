@@ -12,13 +12,13 @@ body, html {
 
 .trailer-seccion {
   position: relative;
-  margin-top: -57px; /* Mueve la sección del trailer hacia arriba */
+  margin-top: -57px; 
   z-index: 20;
 }
 
 .trailer-container {
   width: 100%;
-  height: 100vh; /* Hace que el contenedor tenga la altura de la ventana */
+  height: 100vh; 
   position: relative;
   overflow: hidden;
 }
@@ -29,9 +29,9 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta la imagen al contenedor */
+  object-fit: cover; 
   display: block;
-  z-index: 20; /* Mayor que el del nav */
+  z-index: 20; 
 }
 
 .max-logo-detalle img {
@@ -95,9 +95,9 @@ body, html {
 #detalles-pelicula .col-12.col-sm-6 {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinea el contenido al inicio */
-  margin-top: 0; /* Elimina cualquier margen adicional */
-  padding-top: 0; /* Elimina cualquier padding adicional */
+  justify-content: flex-start; 
+  margin-top: 0; 
+  padding-top: 0; 
 }
 
 @media (max-width: 576px) {

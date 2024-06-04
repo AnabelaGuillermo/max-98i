@@ -1,7 +1,7 @@
 import { obtenerPeliculasDeLS } from "../js/utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const resultadosSeries = document.getElementById("resultados-peliculas"); // Cambiado a resultados-peliculas
+  const resultadosSeries = document.getElementById("resultados-peliculas"); 
   const filtroCategoria = document.getElementById("filtro-categoria");
 
   // Filtrar por tipo y publicación

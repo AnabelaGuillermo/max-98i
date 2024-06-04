@@ -1,4 +1,4 @@
-// combinedValidators.js
+
 
 // Funciones de validación generales
 export const validateName = (name) => {

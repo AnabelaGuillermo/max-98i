@@ -1,4 +1,4 @@
-// utils.js
+
 
 // Importa la función para obtener todas las películas del almacenamiento local
 export function obtenerPeliculasDeLS() {

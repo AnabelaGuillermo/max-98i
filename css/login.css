@@ -19,7 +19,7 @@ h1{
 .boton-google {
     color: white; 
     width: auto; 
-    display: inline-block; /* Asegura que el ancho se ajuste al contenido */
+    display: inline-block; 
 }
 
 .boton-facebook .fab,
@@ -52,21 +52,21 @@ h1{
   
   .swal-popup-success,
   .swal-popup-error {
-    background-color: #ffffff !important; /* Fondo blanco */
+    background-color: #ffffff !important; 
   }
   
   .swal-title-success,
   .swal-title-error,
   .swal-text-success,
   .swal-text-error {
-    color: var(--color-primario) !important; /* Texto color primario */
+    color: var(--color-primario) !important; 
   }
   
   .swal-icon-success {
-    color: var(--color-secundario) !important; /* Icono color secundario */
+    color: var(--color-secundario) !important; 
   }
   
   .swal-icon-error {
-    color: var(--color-secundario) !important; /* Icono color secundario */
+    color: var(--color-secundario) !important; 
   }
   

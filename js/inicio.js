@@ -6,45 +6,64 @@ function cargarPeliculasDestacadasEnCarrusel() {
 
   const peliculasDestacadas = obtenerPeliculasDestacadas();
 
+
+  console.log('Películas destacadas:', peliculasDestacadas); // Para depuración
+
   carouselInner.innerHTML = '';
   carouselIndicators.innerHTML = '';
 
-  peliculasDestacadas.forEach((pelicula, index) => {
-    const isActive = index === 0 ? "active" : "";
+  if (peliculasDestacadas.length === 0) {
+    const mensajeHTML = `
+      <div class="carousel-item active">
+        <img src="../assets/portadaMax.jpg" class="d-block w-100" alt="No hay películas disponibles">
 
-    const slideHTML = `
-      <div class="carousel-item ${isActive}">
-        ${
-          window.innerWidth < 768 ?
-          `<img src="${pelicula.caratula}" class="d-block w-100" alt="${pelicula.titulo}">` :
-          `<img src="${pelicula.portada}" class="d-block w-100" alt="${pelicula.titulo}">`
-        }
         <div class="carousel-caption">
-          <h5>${pelicula.titulo}</h5>
-          <p>${pelicula.descripcion}</p>
-          <a class="btn link-reproducir" href="${pelicula.video}" target="_blank"><i class="fa-regular fa-circle-play"></i> REPRODUCIR</a>
-          <a class="btn link-ver-mas" href="./detalle.html?peliculaIndex=${index}">VER MÁS...</a>
+          <h5>No hay películas destacadas en este momento</h5>
+          <p>Vuelve pronto para ver las últimas novedades.</p>
         </div>
       </div>
     `;
+    carouselInner.innerHTML = mensajeHTML;
+    
+  } else {
+    peliculasDestacadas.forEach((pelicula, index) => {
+      const isActive = index === 0 ? "active" : "";
 
-    carouselInner.innerHTML += slideHTML;
 
-    const indicatorHTML = `
-      <button
-        type="button"
-        data-bs-target="#carousel-inicio"
-        data-bs-slide-to="${index}"
-        class="${isActive}"
-        aria-label="Slide ${index + 1}"
-      ></button>
-    `;
+      const slideHTML = `
+        <div class="carousel-item ${isActive}">
+          ${
+            window.innerWidth < 768 ?
+            `<img src="${pelicula.caratula}" class="d-block w-100" alt="${pelicula.titulo}">` :
+            `<img src="${pelicula.portada}" class="d-block w-100" alt="${pelicula.titulo}">`
+          }
+          <div class="carousel-caption">
+            <h5>${pelicula.titulo}</h5>
+            <p>${pelicula.descripcion}</p>
+            <a class="btn link-reproducir" href="${pelicula.video}" target="_blank"><i class="fa-regular fa-circle-play"></i> REPRODUCIR</a>
+            <a class="btn link-ver-mas" href="./detalle.html?peliculaIndex=${index}">VER MÁS...</a>
+          </div>
+        </div>
+      `;
 
-    carouselIndicators.innerHTML += indicatorHTML;
-  });
+      carouselInner.innerHTML += slideHTML;
 
-  const myCarousel = document.querySelector('#carousel-inicio');
-  const carousel = new bootstrap.Carousel(myCarousel);
+      const indicatorHTML = `
+        <button
+          type="button"
+          data-bs-target="#carousel-inicio"
+          data-bs-slide-to="${index}"
+          class="${isActive}"
+          aria-label="Slide ${index + 1}"
+        ></button>
+      `;
+
+      carouselIndicators.innerHTML += indicatorHTML;
+    });
+
+    const myCarousel = document.querySelector('#carousel-inicio');
+    const carousel = new bootstrap.Carousel(myCarousel);
+  }
 }
 
 window.addEventListener("load", () => {

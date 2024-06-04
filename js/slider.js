@@ -64,7 +64,7 @@ function desplazarSlider(contenedor, direccion) {
     ) {
       contenedor.scrollLeft = contenedor.clientWidth / 2;
     }
-  }, 500); // Ajustar el tiempo si es necesario
+  }, 500); 
 }
 
 // Agregar event listeners a las flechas
