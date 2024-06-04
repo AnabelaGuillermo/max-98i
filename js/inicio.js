@@ -1,59 +1,73 @@
-// Importar la función para obtener películas destacadas
 import { obtenerPeliculasDestacadas } from './utils.js';
 
-// Función para cargar las películas destacadas en el carrusel
 function cargarPeliculasDestacadasEnCarrusel() {
   const carouselInner = document.querySelector(".carousel-inner");
   const carouselIndicators = document.querySelector(".carousel-indicators");
 
-  // Obtener las películas destacadas
   const peliculasDestacadas = obtenerPeliculasDestacadas();
 
-  // Limpiar el contenido actual del carrusel
+  console.log('Películas destacadas:', peliculasDestacadas); // Para depuración
+
   carouselInner.innerHTML = '';
   carouselIndicators.innerHTML = '';
 
-  // Iterar sobre las películas destacadas y agregarlas al carrusel
-  peliculasDestacadas.forEach((pelicula, index) => {
-    const isActive = index === 0 ? "active" : "";
-
-    // Construir el HTML del slide
-    const slideHTML = `
-      <div class="carousel-item ${isActive}">
-        <img src="${pelicula.portada}" class="d-block w-100" alt="${pelicula.titulo}">
+  if (peliculasDestacadas.length === 0) {
+    const mensajeHTML = `
+      <div class="carousel-item active">
+        <img src="../assets/portadaMax.jpg" class="d-block w-100" alt="No hay películas disponibles">
         <div class="carousel-caption">
-          <h5>${pelicula.titulo}</h5>
-          <p>${pelicula.descripcion}</p>
-          <a class="btn link-reproducir" href="${pelicula.video}" target="_blank"><i class="fa-regular fa-circle-play"></i> REPRODUCIR</a>
-          <a class="btn link-ver-mas" href="./detalle.html?peliculaIndex=${index}">VER MÁS...</a>
+          <h5>No hay películas destacadas en este momento</h5>
+          <p>Vuelve pronto para ver las últimas novedades.</p>
         </div>
       </div>
     `;
+    carouselInner.innerHTML = mensajeHTML;
+    
+  } else {
+    peliculasDestacadas.forEach((pelicula, index) => {
+      const isActive = index === 0 ? "active" : "";
 
-    // Agregar el slide al carrusel
-    carouselInner.innerHTML += slideHTML;
+      const slideHTML = `
+        <div class="carousel-item ${isActive}">
+          ${
+            window.innerWidth < 768 ?
+            `<img src="${pelicula.caratula}" class="d-block w-100" alt="${pelicula.titulo}">` :
+            `<img src="${pelicula.portada}" class="d-block w-100" alt="${pelicula.titulo}">`
+          }
+          <div class="carousel-caption">
+            <h5>${pelicula.titulo}</h5>
+            <p>${pelicula.descripcion}</p>
+            <a class="btn link-reproducir" href="${pelicula.video}" target="_blank"><i class="fa-regular fa-circle-play"></i> REPRODUCIR</a>
+            <a class="btn link-ver-mas" href="./detalle.html?peliculaIndex=${index}">VER MÁS...</a>
+          </div>
+        </div>
+      `;
 
-    // Construir el HTML del indicador
-    const indicatorHTML = `
-      <button
-        type="button"
-        data-bs-target="#carousel-inicio"
-        data-bs-slide-to="${index}"
-        class="${isActive}"
-        aria-label="Slide ${index + 1}"
-      ></button>
-    `;
+      carouselInner.innerHTML += slideHTML;
 
-    // Agregar el indicador al carrusel
-    carouselIndicators.innerHTML += indicatorHTML;
-  });
+      const indicatorHTML = `
+        <button
+          type="button"
+          data-bs-target="#carousel-inicio"
+          data-bs-slide-to="${index}"
+          class="${isActive}"
+          aria-label="Slide ${index + 1}"
+        ></button>
+      `;
 
-  // Inicializar el carrusel de Bootstrap usando JavaScript puro
-  const myCarousel = document.querySelector('#carousel-inicio');
-  const carousel = new bootstrap.Carousel(myCarousel);
+      carouselIndicators.innerHTML += indicatorHTML;
+    });
+
+    const myCarousel = document.querySelector('#carousel-inicio');
+    const carousel = new bootstrap.Carousel(myCarousel);
+  }
 }
 
-// Llamar a la función para cargar las películas destacadas en el carrusel cuando se cargue la página
 window.addEventListener("load", () => {
+  cargarPeliculasDestacadasEnCarrusel();
+});
+
+// Manejar cambios en el tamaño de la ventana
+window.addEventListener("resize", () => {
   cargarPeliculasDestacadasEnCarrusel();
 });

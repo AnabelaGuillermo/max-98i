@@ -1,7 +1,6 @@
 /* Estilos personalizados para el formulario */
-
 .boton-custom {
-  background-color: #007bff; /* Azul */
+  background-color: #007bff; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -16,7 +15,7 @@
 }
 
 .boton-custom:hover {
-  background-color: #0056b3; /* Azul oscuro */
+  background-color: #0056b3; 
 }
 
 #form-peliculas-series {
@@ -29,8 +28,6 @@
   }
   
   /* Estilos para el menú desplegable */
-
-/* Estilos personalizados solo para el formulario de categorías */
 .label-categorias {
   position: absolute;
   top: 50%;
@@ -59,8 +56,8 @@
 
 /* Estilos para las opciones del menú desplegable */
 .categorias-select option {
-  color: black; /* Color del texto de las opciones */
-  background-color: white; /* Color de fondo de las opciones */
+  color: black; 
+  background-color: white;
 }
   
   .label-floating {

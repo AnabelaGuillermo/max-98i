@@ -5,7 +5,7 @@
     background-clip: text;
     color: transparent;
     text-shadow: 2px 2px 4px #6a029a;
-    font-size: 15rem; /* Cambiado para que sea más grande */
+    font-size: 15rem; 
     position: relative;
     transition: text-shadow 0.1s ease-in-out;
     background-size: contain;
@@ -13,7 +13,7 @@
   }
   
   main .display-1 {
-    font-size: 12rem; /* Cambiado para que sea más grande */
+    font-size: 12rem; 
     font-weight: 870;
   }
   

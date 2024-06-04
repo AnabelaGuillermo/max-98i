@@ -271,6 +271,10 @@ a {
   margin: 0;
 }
 
+body > header > nav > section > button {
+  margin-right: 30px;
+}
+
 
 @media (max-width: 992px) {
   .seccion-derecha-nav {
@@ -339,18 +343,15 @@ a {
 
 /* Estilos adicionales para dispositivos móviles */
 @media (max-width: 992px) {
-  /* Muestra el botón de salir en el menú desplegable */
+  
   #navbarNav #btn-salir {
     display: flex;
-    margin-left: auto; /* Ajusta el margen para que se posicione a la derecha dentro del menú desplegable */
+    margin-left: auto; 
   }
-
-  /* Oculta el botón de salir en la barra de navegación principal */
 }
 
 /* Estilos adicionales para dispositivos más grandes (no móviles) */
 @media (min-width: 992px) {
-  /* Muestra el botón de salir en la navegación principal */
   #btn-salir {
     display: flex;
   }
