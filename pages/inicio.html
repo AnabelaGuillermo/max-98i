@@ -31,28 +31,19 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/inicio.css" />
+    <link rel="stylesheet" href="../css/slider.css" />
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg navbar-primary">
         <section class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img
-              src="../assets/Max_logo.svg.png"
-              class="max-logo"
-              alt="Max-logo"
-            />
+            <img src="../assets/Max_logo.svg.png" class="max-logo" alt="Max-logo" />
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <section class="collapse navbar-collapse" id="navbarNav">
@@ -67,25 +58,136 @@
                 <a class="nav-link" href="./peliculas.html">Películas</a>
               </li>
             </ul>
-            <form class="d-flex search-form">
-              <input
-                class="form-control me-2 input-boton"
-                type="search"
-                placeholder="Buscar..."
-                aria-label="Search"
-              />
+            <form class="d-flex search-form" id="searchForm">
+              <input class="form-control me-2 input-boton" type="search" placeholder="Buscar..." aria-label="Search" id="searchInput" />
               <button class="btn boton-search" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
-            <a class="nav-link miperfil-max" href="./adminPelisSeries.html"
-              >Mi perfil</a
-            >
+            <a class="nav-link miperfil-max" href="./adminPelisSeries.html">
+              <i class="fa-regular fa-circle-user fa-2xl"></i>
+            </a>
+            <button id="btn-salir" class="btn btn-danger">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
           </section>
         </section>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <!-- PORTADA -->
+      <section class="container-fluid seccion-carousel-inicio">
+        <article id="carousel-inicio" class="carousel slide">
+          <div class="carousel-indicators">
+          </div>
+          <div class="carousel-inner">
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carousel-inicio"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carousel-inicio"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </article>
+      </section>
+
+      <!-- CATEGORÍAS -->
+      <section class="container categorias-inicio mt-4">
+        <div class="row justify-content-between">
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-comedia" href="./comedia.html"
+              >COMEDIA</a
+            >
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-drama" href="./drama.html">DRAMA</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-terror" href="./terror.html">TERROR</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-accion" href="./accion.html">ACCIÓN</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-crimen" href="./crimen.html">CRIMEN</a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block link-romanticas" href="./romanticas.html"
+              >ROMÁNTICAS</a
+            >
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a
+              class="btn btn-block link-ciencia-ficcion"
+              href="./cienciaFiccion.html"
+              >CIENCIA FICCIÓN</a
+            >
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <a class="btn btn-block ver-todo-inicio" href="./verTodo.html"
+              >VER TODO...</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- PELICULAS RECOMENDADAS -->
+      <section
+        class="container peliculas-recomendadas-inicio d-flex justify-content-center"
+      >
+        <h2 class="mt-5">PELÍCULAS RECOMENDADAS</h2>
+      </section>
+      <section id="slider1" class="container-wrapper">
+        <button class="arrow left">&#10094;</button>
+        <section class="container peliculas-recomendadas-slider"></section>
+        <button class="arrow right">&#10095;</button>
+      </section>
+
+      <!-- TENDENCIAS -->
+      <section
+        class="container peliculas-recomendadas-inicio d-flex justify-content-center"
+      >
+        <h2 class="mt-5">TENDENCIAS</h2>
+      </section>
+      <section id="slider2" class="container-wrapper">
+        <button class="arrow left">&#10094;</button>
+        <section class="container peliculas-recomendadas-slider"></section>
+        <button class="arrow right">&#10095;</button>
+      </section>
+
+      <!-- LO MÁS VISTO -->
+      <section
+        class="container peliculas-recomendadas-inicio d-flex justify-content-center"
+      >
+        <h2 class="mt-5">LO MÁS VISTO</h2>
+      </section>
+      <section id="slider3" class="container-wrapper">
+        <button class="arrow left">&#10094;</button>
+        <section class="container peliculas-recomendadas-slider"></section>
+        <button class="arrow right">&#10095;</button>
+      </section>
+
+      <!-- BOTONES -->
+      <section class="container d-flex justify-content-center mt-5">
+        <a class="btn ver-todo-series" href="../pages/series.html"
+          >VER TODO EN SERIES</a
+        >
+        <a class="btn ver-todo-peliculas" href="../pages/peliculas.html"
+          >VER TODO EN PELÍCULAS</a
+        >
+      </section>
+    </main>
     <footer>
       <section class="container footer-max">
         <hr />
@@ -134,5 +236,12 @@
         </a>
       </section>
     </footer>
+
+    <script type="module" src="../js/login/logout.js"></script>
+    <script type="module" src="../js/inicio.js"></script>
+    <script type="module" src="../js/utils.js"></script>
+    <script type="module" src="../js/slider.js"></script>
+    <script type="module" src="../js/nav.js"></script>
+    <script type="module" src="../js/busqueda.js"></script>
   </body>
 </html>

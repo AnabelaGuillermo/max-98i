@@ -1,0 +1,107 @@
+.container-wrapper {
+  position: relative;
+}
+
+.peliculas-recomendadas-slider {
+  display: flex;
+  overflow-x: hidden; 
+  gap: 1rem;
+  padding: 1rem;
+  scroll-behavior: smooth; 
+}
+
+.pelicula {
+  flex: 0 0 auto;
+  width: calc((100% - 5rem) / 6); 
+  box-sizing: border-box;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pelicula:hover {
+  transform: scale(1.05); 
+}
+
+.pelicula:hover img {
+  filter: brightness(1.2); 
+}
+
+.pelicula:hover .titulo {
+  background-color: rgba(0, 0, 0, 0.7); 
+  
+}
+
+.pelicula img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pelicula .titulo {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.pelicula::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); 
+  transition: background-color 0.3s ease; 
+}
+
+.pelicula:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+
+@media (max-width: 768px) {
+  .pelicula {
+    width: calc((100% - 1rem) / 2); 
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0.5rem;
+  transition: transform 0.3s ease; 
+}
+
+.arrow.left {
+  left: 50px; 
+}
+
+.arrow.right {
+  right: 50px; 
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1); 
+}
+
+@media (max-width: 575.98px) {
+  .arrow.left {
+    left: 10px;
+  }
+
+  .arrow.arrow.right {
+    right: 10px;
+  }
+}

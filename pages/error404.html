@@ -5,45 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Max - Error 404</title>
     <meta name="author" content="Grupo 5" />
-    <meta
-      name="description"
-      content="Max 404 desarrollado por Grupo 5"
-    />
+    <meta name="description" content="Max 404 desarrollado por Grupo 5" />
     <meta
       name="keywords"
       content="Max, 404, rolling, RollingCode, proyecto grupal, grupo 5"
     />
     <link
-    rel="shortcut icon"
-    href="../assets/favicon-max.png"
-    type="image/png"
-  />
-  <script
-  src="https://kit.fontawesome.com/b33de609e9.js"
-  crossorigin="anonymous"
-></script>
+      rel="shortcut icon"
+      href="../assets/favicon-max.png"
+      type="image/png"
+    />
+    <script
+      src="https://kit.fontawesome.com/b33de609e9.js"
+      crossorigin="anonymous"
+    ></script>
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-  />
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-    <link rel="stylesheet" href="../css/styles.css">
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/error404.css" />
+    
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg navbar-primary">
         <section class="container-fluid">
           <a class="navbar-brand" href="./inicio.html">
-            <img src="../assets/Max_logo.svg.png" class="max-logo" alt="Max-logo">
+            <img
+              src="../assets/Max_logo.svg.png"
+              class="max-logo"
+              alt="Max-logo"
+            />
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <section class="collapse navbar-collapse" id="navbarNav">
@@ -59,21 +70,39 @@
               </li>
             </ul>
             <form class="d-flex search-form">
-              <input class="form-control me-2 input-boton" type="search" placeholder="Buscar..." aria-label="Search">
-              <button class="btn boton-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input
+                class="form-control me-2 input-boton"
+                type="search"
+                placeholder="Buscar..."
+                aria-label="Search"
+              />
+              <button class="btn boton-search" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
             </form>
-            <a class="nav-link miperfil-max" href="./adminPelisSeries.html">Mi perfil</a>
+            <a class="nav-link miperfil-max" href="./adminPelisSeries.html"
+              ><i class="fa-regular fa-circle-user fa-2xl"></i></a
+            >
+            <button id="btn-salir" class="btn btn-danger">
+              <i class="fas fa-sign-out-alt"></i>
+          </button>
           </section>
         </section>
       </nav>
-      
     </header>
+
     <main>
-
-
-
-
+      <section
+        class="d-flex flex-column align-items-center justify-content-center text-center mt-5"
+      >
+        <h1 class="display-1 error-404">404</h1>
+        <p class="lead">Lo sentimos, la página que buscas no existe.</p>
+        <a href="./inicio.html" class="btn boton-registro mt-3"
+          >Volver al Inicio</a
+        >
+      </section>
     </main>
+
     <footer>
       <section class="container footer-max">
         <hr />
@@ -121,6 +150,11 @@
           <img class="a-tiktok" src="../assets/tik_tok.png" alt="TikTok-Max" />
         </a>
       </section>
+
     </footer>
+    <script type="module" src="../js/error.js"></script>
+    <script type="module" src="../js/login/logout.js"></script>
+    <script type="module" src="../js/nav.js"></script>
+    <script type="module" src="../js/busqueda.js"></script>
   </body>
 </html>
