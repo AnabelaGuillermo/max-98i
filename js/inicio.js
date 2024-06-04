@@ -6,6 +6,7 @@ function cargarPeliculasDestacadasEnCarrusel() {
 
   const peliculasDestacadas = obtenerPeliculasDestacadas();
 
+
   console.log('Películas destacadas:', peliculasDestacadas); // Para depuración
 
   carouselInner.innerHTML = '';
@@ -15,6 +16,7 @@ function cargarPeliculasDestacadasEnCarrusel() {
     const mensajeHTML = `
       <div class="carousel-item active">
         <img src="../assets/portadaMax.jpg" class="d-block w-100" alt="No hay películas disponibles">
+
         <div class="carousel-caption">
           <h5>No hay películas destacadas en este momento</h5>
           <p>Vuelve pronto para ver las últimas novedades.</p>
@@ -26,6 +28,7 @@ function cargarPeliculasDestacadasEnCarrusel() {
   } else {
     peliculasDestacadas.forEach((pelicula, index) => {
       const isActive = index === 0 ? "active" : "";
+
 
       const slideHTML = `
         <div class="carousel-item ${isActive}">
